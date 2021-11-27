@@ -7,32 +7,126 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Home-section1 {
+  background-image: url('keysign.png');
+  background-color: #242930;
+  background-size: 53%;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.Home-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Home-section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin-top: 50px;
+}
+
+.App-subheader {
+  margin-top: 25px;
+  width: 50%;
+}
+
+.App-footer {
+  background-image: url('keysign.png');
+  background-color: #242930;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.appStores {
+  align-items: center;
+}
+
+.appStores img {
+  padding: 10px;
+}
+
+.appStores2 {
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.appStores2 img {
+  padding: 10px;
+}
+
+.appScreenshots {
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.social img {
+  padding-left: 40px;
+}
+
+.h1, h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 105px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.h2, h2 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 85px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+    background-color: #242930 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 40px;
+}
+
+a {
+	text-decoration: none;
+  color: #FFD93F;
+}
+
+.createdBy {
+  margin-top: 30px;
+}
+
+.downloadDetails {
+  margin-top: 10px;
+  font-size: 15px;
 }
