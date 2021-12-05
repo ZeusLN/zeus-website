@@ -104,6 +104,16 @@
   display: block;
 }
 
+.h3, h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 85px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
     background-color: #242930 !important;
 }
@@ -129,4 +139,28 @@ a {
 .downloadDetails {
   margin-top: 10px;
   font-size: 15px;
+}
+
+.App-donors {
+    display: inline-block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.communitySponsors {
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+
+.donor {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.donor:hover {
+    box-shadow: 0px 0px 5px 8px rgb(255, 218, 70);
+    transition: .4s all;
 }
