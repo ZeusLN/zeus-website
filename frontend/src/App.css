@@ -75,6 +75,15 @@
   padding: 10px;
 }
 
+.appStores3 {
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.appStores3 img {
+  padding: 10px;
+}
+
 .appScreenshots {
   align-items: center;
   margin-top: 50px;
@@ -151,7 +160,7 @@ a {
     align-content: center;
     width: 80%;
     margin: 0 auto;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
 }
 
 .donor {

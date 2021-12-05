@@ -22,7 +22,7 @@ export default function About() {
 
   useEffect(() => {
       setLoading(true);
-      fetch('https://mempool.space/api/v1/donations')
+      fetch('/sponsors/getCommunitySponsors')
           .then(response => {
               if (response.ok) {
                 return response.json();
@@ -34,7 +34,7 @@ export default function About() {
           })
           .catch(error => {
               console.error("Error fetching data: ", error);
-              setError(error);
+              setError(error.toString());
           })
           .finally(() => {
               setLoading(false);
@@ -72,7 +72,7 @@ export default function About() {
                 <Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }} onClick={() => toggleDonation(true)}>Become a Community Sponsor</Button>
             </div>
         </p>
-        <div className="appStores">
+        <div className="appStores3">
           <img
             src={appleAppStore}
             width="300"
