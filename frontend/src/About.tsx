@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -47,6 +48,20 @@ export default function About() {
       setTwitterHandle(event.target.value);
   };
 
+  const makeDonationCall = (handle: string) => {
+      axios.post('/donations/makeDonation', {
+          handle: twitterHandle
+      })
+      .then((response: any) => {
+          console.log(response);
+          window.open(response.data.checkoutLink, '_blank');
+      })
+      .catch(function (error) {
+        // TODO handle error
+        console.log(error);
+      });
+  };
+
   const donorDisplay = [];
   if (data) {
       for (let donor of data) {
@@ -88,7 +103,7 @@ export default function About() {
                             variant="contained"
                             size="large"
                             sx={{ backgroundColor: '#FFD93F', }}
-                            onClick={() => toggleDonation(false)}
+                            onClick={() => makeDonationCall(twitterHandle)}
                         >
                             Make donation
                         </Button>

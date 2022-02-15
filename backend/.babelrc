@@ -1,6 +1,10 @@
 {
   "presets": ["es2015", "stage-0", "react"],
-  "plugins":  [],
+  "plugins": [
+    ["transform-runtime", {
+      "regenerator": true
+    }]
+  ],
   "env": {
     "development": {
       "presets": ["react-hmre"]
