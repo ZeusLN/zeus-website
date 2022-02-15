@@ -65,7 +65,7 @@ export default function About() {
   const donorDisplay = [];
   if (data) {
       for (let donor of data) {
-          donorDisplay.push(<div className="donor"><a href={`https://twitter.com/${donor.handle}`} target="_blank" rel="noreferrer"><Avatar src={donor.imageUrl} sx={{ width: 100, height: 100 }} /></a></div>);
+          donorDisplay.push(<div className="donor"><a href={`https://twitter.com/${donor.handle}`} target="_blank" rel="noreferrer"><Avatar src={`http://localhost:1337/twitter-images/${donor.handle}.jpg`} sx={{ width: 100, height: 100 }} /></a></div>);
       }
   }
 
@@ -99,14 +99,14 @@ export default function About() {
                                 <input style={{ padding: 10, color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
                             </span>
                         </div>
-                        <Button
+                        {twitterHandle && <Button
                             variant="contained"
                             size="large"
                             sx={{ backgroundColor: '#FFD93F', }}
                             onClick={() => makeDonationCall(twitterHandle)}
                         >
                             Make donation
-                        </Button>
+                        </Button>}
                     </>}
                     {donationType === 'corporate' && <a href="mailto:zeusln@tutanota.com?subject=Corporate Donation" target="_blank" rel="noreferrer"><Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }}>Get in touch</Button></a>}
                     <div style={{ marginTop: 20 }}>

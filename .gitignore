@@ -9,6 +9,9 @@
 # config
 /backend/config.json
 
+# twitter images
+/backend/public/twitter-images/
+
 # testing
 /coverage
 

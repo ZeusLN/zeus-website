@@ -13,7 +13,9 @@ router.route('/makeDonation').post(async (req, res) => {
     console.log(req.body.handle);
 
     const data = {
-        amount: '1000000',
+        // TODO make amount configurable
+        // amount: '1000000',
+        amount: '10000',
         currency: 'sats'
     };
 
@@ -33,12 +35,12 @@ router.route('/makeDonation').post(async (req, res) => {
             console.log('Body: ', response.data);
             await knex('sponsors').insert({
                 handle: req.body.handle,
-                invoice: response.data.id
+                invoice: response.data.id,
+                status: 'PENDING'
             });
             res.json({
                 success: true,
-                checkoutLink: response.data.checkoutLink,
-                status: 'PENDING'
+                checkoutLink: response.data.checkoutLink
             });
         })
         .catch((err) => {

@@ -1,6 +1,10 @@
+const cron = require('node-cron');
+
 import express from 'express';
 import routes from './routes/';
 import bodyParser from 'body-parser';
+
+import checkInvoices from './checkInvoices';
 
 /* eslint no-console: 0 */
 
@@ -10,7 +14,7 @@ const port = process.env.PORT || 1337;
 
 const app = express();
 
-app.use(express.static('app'));
+app.use(express.static('public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,4 +33,11 @@ app.listen(port, '0.0.0.0', function onStart(err) {
         port,
         port
     );
+});
+
+// TODO make cron time configurable
+// cron.schedule('*/1 * * * *', () => {
+cron.schedule('*/10 * * * * *', () => {
+    console.log('running a task in 1 minute');
+    checkInvoices();
 });
