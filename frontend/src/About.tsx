@@ -19,6 +19,8 @@ export default function About() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [makeDonation, toggleDonation] = useState(false);
+  const [donationType, setDonationType] = useState('community');
+  const [twitterHandle, setTwitterHandle] = useState('');
 
   useEffect(() => {
       setLoading(true);
@@ -41,6 +43,10 @@ export default function About() {
           })
   }, []);
 
+  const handleInput = (event: any) => {
+      setTwitterHandle(event.target.value);
+  };
+
   const donorDisplay = [];
   if (data) {
       for (let donor of data) {
@@ -52,7 +58,46 @@ export default function About() {
       return (
           <div className="App">
             <header className="App-header">
-                <Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }} onClick={() => toggleDonation(false)}>Go back</Button>
+                <div className="Donate">
+                    <div className="Donation-types">
+                        <button onClick={() => setDonationType('supporter')} className={donationType === 'supporter' ? 'Donation-type-highlighted' : 'Donation-type'}>
+                            <h3>Supporter</h3>
+                            <p className="amount">Any amount</p>
+                            <p>Make a donation and support the project</p>
+                        </button>
+                        <button onClick={() => setDonationType('community')} className={donationType === 'community' ? 'Donation-type-highlighted' : 'Donation-type'}>
+                            <h3>Community Sponsor</h3>
+                            <p className="amount">1M sats</p>
+                            <p>Display your Twitter profile photo on our About page</p>
+                        </button>
+                        <button onClick={() => setDonationType('corporate')} className={donationType === 'corporate' ? 'Donation-type-highlighted' : 'Donation-type'}>
+                            <h3>Corporate</h3>
+                            <p className="amount">100M sats</p>
+                            <p>Link your organization's website on our About page</p>
+                        </button>
+                    </div>
+                    {donationType === 'supporter' && <a href="https://pay.zeusln.app/" target="_blank" rel="noreferrer"><Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }}>Make donation</Button></a>}
+                    {donationType === 'community' && <>
+                        <div style={{ marginBottom: 20 }}>
+                            <span className="twitter-handle">
+                                @
+                                <input style={{ padding: 10, color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
+                            </span>
+                        </div>
+                        <Button
+                            variant="contained"
+                            size="large"
+                            sx={{ backgroundColor: '#FFD93F', }}
+                            onClick={() => toggleDonation(false)}
+                        >
+                            Make donation
+                        </Button>
+                    </>}
+                    {donationType === 'corporate' && <a href="mailto:zeusln@tutanota.com?subject=Corporate Donation" target="_blank" rel="noreferrer"><Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }}>Get in touch</Button></a>}
+                    <div style={{ marginTop: 20 }}>
+                        <Button variant="contained" size="large" sx={{ backgroundColor: '#FFD93F' }} onClick={() => toggleDonation(false)}>Go back</Button>
+                    </div>
+                </div>
             </header>
           </div>
       );
