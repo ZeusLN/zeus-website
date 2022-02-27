@@ -15,8 +15,8 @@ import map from './images/map.png';
 
 import * as config from './config.json';
 
-const androidUrl = `https://zeusln.app/zeus-${config.latestVersion}.apk`;
-const signatureUrl = `https://zeusln.app/zeus-${config.latestVersion}-signature.txt`;
+const androidUrl = `/zeus-${config.latestVersion}.apk`;
+const signatureUrl = `/zeus-${config.latestVersion}-signature.txt`;
 
 const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
   <>
