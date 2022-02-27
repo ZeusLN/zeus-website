@@ -23,7 +23,6 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link href="#docs">Documentation</Nav.Link>
             <Link to="/about">
               <Nav.Link href="#about">About</Nav.Link>
             </Link>
