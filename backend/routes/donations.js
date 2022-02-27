@@ -9,7 +9,10 @@ import * as config from './../config.json';
 router.route('/makeDonation').post(async (req, res) => {
     const data = {
         amount: config.supportAmtSats,
-        currency: 'sats'
+        currency: 'sats',
+        checkout: {
+            redirectURL: 'https://zeusln.app/about'
+        }
     };
 
     axios
