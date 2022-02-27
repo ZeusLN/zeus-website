@@ -68,6 +68,7 @@ export default function About() {
   const [data, setData] = useState<null |  Array<donor>>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [donationError, setDonationError] = useState('');
   const [makeDonation, toggleDonation] = useState(false);
   const [donationType, setDonationType] = useState('community');
   const [twitterHandle, setTwitterHandle] = useState('');
@@ -114,11 +115,14 @@ export default function About() {
       })
       .then((response: any) => {
           console.log(response);
-          window.open(response.data.checkoutLink, '_blank');
+          if (response.data && response.data.checkoutLink) {
+              window.open(response.data.checkoutLink, '_blank');
+          } else {
+              setDonationError('Error communicating with BTCPay Server. Please try again later.');
+          }
       })
       .catch(function (error) {
-        // TODO handle error
-        console.log(error);
+          setDonationError('Error communicating with BTCPay Server. Please try again later.');
       });
   };
 
@@ -216,10 +220,11 @@ export default function About() {
                     </div>
                     {donationType === 'supporter' && <a href="https://pay.zeusln.app/" target="_blank" rel="noreferrer"><Button className={classes.mainButton}>Make donation</Button></a>}
                     {donationType === 'community' && <>
+                        <p style={{ color: 'red' }}>{donationError}</p>
                         <div style={{ marginBottom: 20 }}>
                             <span className="twitter-handle">
                                 @
-                                <input style={{ padding: 10, color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
+                                <input style={{ padding: 10, backgroundColor: '#242930', color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
                             </span>
                         </div>
                         {twitterHandle && <Button
