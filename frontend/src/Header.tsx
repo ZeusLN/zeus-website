@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="transparent" variant="dark" expand="lg">
       <Container>
         <Link to="/">
           <Navbar.Brand>
             <img
               src={logo}
-              width="300"
-              height="55"
+              height="75"
               className="d-inline-block align-top"
               alt="Zeus"
+              style={{ margin: 10 }}
             />
           </Navbar.Brand>
         </Link>

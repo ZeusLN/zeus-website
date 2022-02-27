@@ -20,12 +20,12 @@ function Footer() {
                 height="55"
                 className="d-inline-block align-top"
                 alt="Zeus"
+                style={{ marginBottom: 30 }}
               />
             </Navbar.Brand>
           </Link>
-          <p className="createdBy">Zeus was created and is maintained with ❤️ by <a href="https://twitter.com/evankaloudis">@evankaloudis</a></p>
           <div className="social">
-            <a href="https://github.com/ZeusLN/zeus">
+            <a href="https://github.com/ZeusLN/zeus" target="_blank" rel="noreferrer">
               <img
                 src={github}
                 height="55"
@@ -33,7 +33,7 @@ function Footer() {
                 alt="GitHub"
               />
             </a>
-            <a href="https://t.me/ZeusLN">
+            <a href="https://t.me/ZeusLN" target="_blank" rel="noreferrer">
               <img
                 src={telegram}
                 height="55"
@@ -41,7 +41,7 @@ function Footer() {
                 alt="Telegram"
               />
             </a>
-            <a href="https://twitter.com/ZeusLN">
+            <a href="https://twitter.com/ZeusLN" target="_blank" rel="noreferrer">
               <img
                 src={twitter}
                 height="55"

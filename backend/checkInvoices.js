@@ -5,37 +5,31 @@ const request = require('request');
 const puppeteer = require('puppeteer');
 import knex from './knex';
 
-// TODO set in config file
-const tokenAuth = 'token ' + '04fb321904ee65c26137becad91113cc12d80cb1';
+import * as config from './config.json';
 
 const checkInvoices = async () => {
-    const results = await knex('sponsors')
+    const pendingResults = await knex('sponsors')
         .select('id', 'invoice', 'handle')
         .where({ status: 'PENDING' });
 
-    results.forEach((donation, index) => {
+    pendingResults.forEach((donation, index) => {
         console.log(donation.invoice);
-
         axios
-            .get(
-                `https://testnet.demo.btcpayserver.org/api/v1/stores/5J6vS34vyhnEw9qQZ59PASrYWm9ZmhHoWpSErULdLThV/invoices/${donation.invoice}`,
-                {
-                    headers: {
-                        Authorization: tokenAuth
-                    }
+            .get(`${config.btcPay.store}/invoices/${donation.invoice}`, {
+                headers: {
+                    Authorization: config.btcPay.token
                 }
-            )
+            })
             .then(async (res) => {
                 // Debug
-                console.log(`Status: ${res.status}`);
-                console.log('Body: ', res.data);
+                // console.log(`Status: ${res.status}`);
+                // console.log('Body: ', res.data);
 
                 if (res.data.status === 'Expired') {
                     await knex('sponsors').delete().where({
                         id: donation.id
                     });
                 } else if (res.data.status === 'Settled') {
-                    await scrapeTwitterProfilePic(donation.handle);
                     await knex('sponsors').update({ status: 'PAID' }).where({
                         id: donation.id
                     });
@@ -45,9 +39,18 @@ const checkInvoices = async () => {
                 console.log('error').console.error(err);
             });
     });
+
+    const paidResults = await knex('sponsors')
+        .select('id', 'invoice', 'handle')
+        .where({ status: 'PAID' });
+
+    paidResults.forEach(async (donation, index) => {
+        console.log(donation.invoice);
+        await scrapeTwitterProfilePic(donation.handle, donation.id);
+    });
 };
 
-const scrapeTwitterProfilePic = async (handle) => {
+const scrapeTwitterProfilePic = async (handle, donationId) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
@@ -71,6 +74,10 @@ const scrapeTwitterProfilePic = async (handle) => {
                     );
                     request(url).pipe(fs.createWriteStream(filePath));
                 });
+
+                await knex('sponsors').update({ status: 'DISPLAY' }).where({
+                    id: donationId
+                });
             }
         }
     });
@@ -80,7 +87,7 @@ const scrapeTwitterProfilePic = async (handle) => {
     );
     await page.goto('https://twitter.com/' + handle + '/photo');
     await page.waitFor(1000);
-    // debug
+    // Debug
     // await page.screenshot({ path: 'example.png' });
     await browser.close();
 };

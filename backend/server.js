@@ -6,6 +6,8 @@ import bodyParser from 'body-parser';
 
 import checkInvoices from './checkInvoices';
 
+import * as config from './config.json';
+
 /* eslint no-console: 0 */
 
 const path = require('path');
@@ -35,9 +37,9 @@ app.listen(port, '0.0.0.0', function onStart(err) {
     );
 });
 
-// TODO make cron time configurable
-// cron.schedule('*/1 * * * *', () => {
-cron.schedule('*/10 * * * * *', () => {
-    console.log('running a task in 1 minute');
+// Debug
+// cron.schedule(`*/10 * * * * *`, () => {
+cron.schedule(`*/${config.updateIntervalM} * * * *`, () => {
+    console.log(`running a task in ${config.updateIntervalM} minutes`);
     checkInvoices();
 });

@@ -5,9 +5,10 @@
         "db": "db",
         "host": "host"
     },
-    "btcPayHost": "",
     "btcPay": {
-        "host": "https://demo.btcpayserver.example/api/v1/stores/xxxxxxxxxx",
-        "token": "yyyyyyyyyyyyyyyyyy"
-    }
+        "store": "https://demo.btcpayserver.example/api/v1/stores/xxxxxxxxxx",
+        "token": "token yyyyyyyyyyyyyyyyyy"
+    },
+    "supportAmtSats": "1000000",
+    "updateIntervalM": "10"
 }

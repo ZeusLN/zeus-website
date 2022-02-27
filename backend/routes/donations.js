@@ -4,32 +4,20 @@ import { Router } from 'express';
 const router = new Router();
 
 import knex from './../knex';
-
-// TODO set in config file
-const tokenAuth = 'token ' + '04fb321904ee65c26137becad91113cc12d80cb1';
+import * as config from './../config.json';
 
 router.route('/makeDonation').post(async (req, res) => {
-    console.log(' -Post -');
-    console.log(req.body.handle);
-
     const data = {
-        // TODO make amount configurable
-        // amount: '1000000',
-        amount: '10000',
+        amount: config.supportAmtSats,
         currency: 'sats'
     };
 
-    // TODO set in config
     axios
-        .post(
-            'https://testnet.demo.btcpayserver.org/api/v1/stores/5J6vS34vyhnEw9qQZ59PASrYWm9ZmhHoWpSErULdLThV/invoices',
-            data,
-            {
-                headers: {
-                    Authorization: tokenAuth
-                }
+        .post(`${config.btcPay.store}/invoices`, data, {
+            headers: {
+                Authorization: config.btcPay.token
             }
-        )
+        })
         .then(async (response) => {
             console.log(`Status: ${response.status}`);
             console.log('Body: ', response.data);
