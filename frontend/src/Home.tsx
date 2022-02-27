@@ -5,9 +5,9 @@ import appleAppStore from './images/apple-app-store.png';
 import googlePlay from './images/google-play.png';
 import androidDownload from './images/android-download.png';
 
-import app1 from './images/app1.svg';
-import app2 from './images/app2.svg';
-import app3 from './images/app3.svg';
+import app1 from './images/app1.png';
+import app2 from './images/app2.png';
+import app3 from './images/app3.png';
 
 import zeusLogo from './images/Zeus.svg';
 
