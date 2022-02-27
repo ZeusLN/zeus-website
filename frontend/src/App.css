@@ -1,0 +1,361 @@
+.App {
+  text-align: center;
+  color: #fff;
+  background-color: #242930;
+  background-image: url('keysign.png');
+  background-color: #242930;
+  background-size: 42%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+p.highlighted-amount {
+}
+
+p.highlighted-amount span {
+  white-space: nowrap;
+  color: #FFD93F;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 59%;
+  background-origin: content-box;
+  background-position: 166px 108px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+p.highlighted-text {
+}
+
+p.highlighted-text span {
+  color: #FFD93F;
+  display: inline-block;
+
+  /* background: url("localhost:3000/static/media/lightning-animation.4b145581.gif") repeat center;
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-repeat: repeat-y; */
+
+  animation: pulse-highlight 6s;
+
+
+  letter-spacing: 1px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@keyframes pulse-highlight {
+  0% {
+    transform: scale(0.95);
+    color: 0 0 0 0 rgba(255, 217, 63, 0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    color: 0 0 0 10px rgba(255, 217, 63, 0);
+    opacity: 1.0;
+  }
+}
+
+.Home-section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin-top: 100px;
+}
+
+.Home-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Home-section3 {
+  background-color: #242930;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding-top: 50px;
+}
+
+.Home-section4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding-top: 200px;
+  height: 500px;
+  padding-bottom: 130px;
+}
+
+.App-subheader {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 50%;
+}
+
+.App-footer {
+  background-image: url('keysign.png');
+  background-color: #242930;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.appStores {
+  align-items: center;
+}
+
+.appStores img {
+  padding: 10px;
+}
+
+.appStores2 {
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.appStores2 img {
+  padding: 10px;
+}
+
+.appStores3 {
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 120px;
+  display: inline-block;
+}
+
+.appStores3 img {
+  padding: 10px;
+}
+
+.appScreenshots {
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.social img {
+  padding-left: 40px;
+}
+
+.social2 img {
+  margin: 20px;
+}
+
+.h1, h1 {
+  color: #fff;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 105px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  max-width: 850px;
+}
+
+.h2, h2 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 85px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  max-width: 700px;
+}
+
+.h3, h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+    background-color: #242930 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 40px;
+}
+
+a {
+	text-decoration: none;
+  color: #FFD93F;
+}
+
+.createdBy {
+  margin-top: 30px;
+}
+
+.downloadDetails {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.About-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: block;
+}
+
+.About-text {
+    color: darkgrey;
+    margin: 50px 100px;
+}
+
+.Split {
+    overflow: hidden;
+    width: 50%;
+    margin: auto;
+}
+
+.Split section {
+    width: 50%;
+    min-width: 100px;
+    float: left;
+    display: block;
+}
+
+.Split section:left {
+    float: left;
+}
+
+.appScreenshots {
+    width: 75%;
+    margin: 100px;
+}
+
+.right {
+    margin-top: 120px;
+}
+
+.Zeus-intro {
+    margin-top: 100px;
+    align-items: center;
+    align-self: center;
+}
+
+.Zeus-intro-text {
+    padding: 20px;
+}
+
+.sectionContent {
+    align-content: center;
+    width: 80%;
+    margin: 50px auto;
+    padding-bottom: 30px;
+}
+
+.avatarDisplay {
+    margin-top: 50px;
+}
+
+.avatar {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.avatar:hover {
+    box-shadow: 0px 0px 5px 8px rgb(255, 218, 70);
+    transition: .4s all;
+}
+
+.Donate {
+    padding-top: 80px;
+    background-color: #242930;
+    padding-bottom: 100px;
+}
+
+.Donation-types {
+    align-content: center;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.Donation-type {
+    color: #fff;
+    height: 360px;
+    width: 360px;
+    border-radius: 360px;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-width: 0px;
+    background-color: transparent;
+    background-image: url('keysign.png');
+    background-size: 100%;
+}
+
+.Donation-type:hover {
+  height: 360px;
+  width: 360px;
+  border-radius: 360px;
+  margin: 20px;
+  box-shadow: 0px 0px 2px 2px rgb(255, 218, 70);
+  transition: .2s all;
+}
+
+.Donation-type-highlighted {
+  color: #fff;
+  height: 360px;
+  width: 360px;
+  border-radius: 360px;
+  margin: 20px;
+  background-color: transparent;
+  background-image: url('keysign-highlight.png');
+  background-size: 100%;
+  border-width: 0px;
+}
+
+.Donation-description {
+    margin: 0 100px;
+}
+
+span.twitter-handle {
+	    padding: 10px;
+      padding-right: 10px;
+}
+
+p.amount {
+	    font-size: 20px;
+      font-weight: 800;
+}

@@ -1,0 +1,14 @@
+{
+    "db": {
+        "user": "user",
+        "pass": "pass",
+        "db": "db",
+        "host": "host"
+    },
+    "btcPay": {
+        "store": "https://demo.btcpayserver.example/api/v1/stores/xxxxxxxxxx",
+        "token": "token yyyyyyyyyyyyyyyyyy"
+    },
+    "supportAmtSats": "1000000",
+    "updateIntervalM": "10"
+}
