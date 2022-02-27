@@ -13,9 +13,14 @@ import zeusLogo from './images/Zeus.svg';
 
 import map from './images/map.png';
 
-const AppStores = () => (
+import * as config from './config.json';
+
+const androidUrl = `https://zeusln.app/zeus-${config.latestVersion}.apk`;
+const signatureUrl = `https://zeusln.app/zeus-${config.latestVersion}-signature.txt`;
+
+const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
   <>
-    <a href="https://apps.apple.com/us/app/zeus-ln/id1456038895">
+    <a href="https://apps.apple.com/us/app/zeus-ln/id1456038895" target="_blank" rel="noreferrer">
       <img
         src={appleAppStore}
         width="240"
@@ -23,7 +28,7 @@ const AppStores = () => (
         alt="Apple App Store"
       />
     </a>
-    <a href="https://play.google.com/store/apps/details?id=app.zeusln.zeus">
+    <a href="https://play.google.com/store/apps/details?id=app.zeusln.zeus" target="_blank" rel="noreferrer">
       <img
         src={googlePlay}
         width="240"
@@ -31,7 +36,7 @@ const AppStores = () => (
         alt="Google Play"
       />
     </a>
-    <a href="https://zeusln.app/zeus-v0.5.2.apk">
+    <a href={androidUrl} target="_blank" rel="noreferrer">
       <img
         src={androidDownload}
         width="240"
@@ -39,6 +44,10 @@ const AppStores = () => (
         alt="Android Download"
       />
     </a>
+    {signatures && <>
+        <p className="downloadDetails">Latest release: {config.latestVersion}</p>
+        <p className="downloadDetails"><a href={signatureUrl}>Developer Signature</a> | <a href="https://zeusln.app/PGP.txt">PGP key</a></p>
+    </>}
   </>
 );
 
@@ -51,7 +60,7 @@ function Home() {
           Zeus is an open-source, non-custodial Bitcoin wallet that gives you full control over how you make payments.
         </p>
         <div className="appStores">
-          <AppStores />
+          <AppStores signatures />
         </div>
 
         <div className="appScreenshots">

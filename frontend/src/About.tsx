@@ -55,6 +55,10 @@ import appleAppStore from './images/apple-app-store.png';
 import googlePlay from './images/google-play.png';
 import androidDownload from './images/android-download.png';
 
+import * as config from './config.json';
+
+const androidUrl = `https://zeusln.app/zeus-${config.latestVersion}.apk`;
+
 interface donor {
   handle: string;
   imageUrl: string;
@@ -332,24 +336,30 @@ export default function About() {
         </p>
 
         <div className="appStores3">
-          <img
-            src={appleAppStore}
-            width="300"
-            className="d-inline-block align-top"
-            alt="Apple App Store"
-          />
-          <img
-            src={googlePlay}
-            width="300"
-            className="d-inline-block align-top"
-            alt="Google Play"
-          />
-          <img
-            src={androidDownload}
-            width="300"
-            className="d-inline-block align-top"
-            alt="Android Download"
-          />
+          <a href="https://apps.apple.com/us/app/zeus-ln/id1456038895" target="_blank" rel="noreferrer">
+            <img
+              src={appleAppStore}
+              width="240"
+              className="d-inline-block align-top"
+              alt="Apple App Store"
+            />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.zeusln.zeus" target="_blank" rel="noreferrer">
+            <img
+              src={googlePlay}
+              width="240"
+              className="d-inline-block align-top"
+              alt="Google Play"
+            />
+          </a>
+          <a href={androidUrl} target="_blank" rel="noreferrer">
+            <img
+              src={androidDownload}
+              width="240"
+              className="d-inline-block align-top"
+              alt="Android Download"
+            />
+          </a>
         </div>
       </header>
     </div>

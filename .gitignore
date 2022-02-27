@@ -8,6 +8,7 @@
 
 # config
 /backend/config.json
+/frontend/src/config.json
 
 # twitter images
 /backend/public/twitter-images/
