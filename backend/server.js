@@ -38,7 +38,8 @@ app.listen(port, '0.0.0.0', function onStart(err) {
     );
 });
 
-createTable();
+// TODO fix set-up here
+// createTable();
 
 // Debug
 // cron.schedule(`*/10 * * * * *`, () => {
