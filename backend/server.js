@@ -4,6 +4,7 @@ import express from 'express';
 import routes from './routes/';
 import bodyParser from 'body-parser';
 
+import createTable from './createTable';
 import checkInvoices from './checkInvoices';
 
 import * as config from './config.json';
@@ -36,6 +37,8 @@ app.listen(port, '0.0.0.0', function onStart(err) {
         port
     );
 });
+
+createTable();
 
 // Debug
 // cron.schedule(`*/10 * * * * *`, () => {
