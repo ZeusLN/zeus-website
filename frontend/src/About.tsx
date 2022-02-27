@@ -85,7 +85,7 @@ export default function About() {
 
   useEffect(() => {
       setLoading(true);
-      fetch('/sponsors/getCommunitySponsors')
+      fetch(`${process.env.NODE_ENV === 'development' ? '' : '/api'}/sponsors/getCommunitySponsors`)
           .then(response => {
               if (response.ok) {
                 return response.json();
@@ -109,7 +109,7 @@ export default function About() {
   };
 
   const makeDonationCall = (handle: string) => {
-      axios.post('/donations/makeDonation', {
+      axios.post(`${process.env.NODE_ENV === 'development' ? '' : '/api'}/donations/makeDonation`, {
           handle: twitterHandle
       })
       .then((response: any) => {
