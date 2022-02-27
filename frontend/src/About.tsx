@@ -128,7 +128,7 @@ export default function About() {
         donorDisplay.push(<p>No community sponsors yet. Be the first!</p>);
   } else if (data) {
       for (let donor of data) {
-          donorDisplay.push(<div className="avatar"><a href={`https://twitter.com/${donor.handle}`} target="_blank" rel="noreferrer"><Avatar src={`http://localhost:1337/twitter-images/${donor.handle}.jpg`} sx={{ width: 100, height: 100 }} /></a></div>);
+          donorDisplay.push(<div className="avatar"><a href={`https://twitter.com/${donor.handle}`} target="_blank" rel="noreferrer"><Avatar src={`${process.env.NODE_ENV === 'development' ? '' : '/api'}/twitter-images/${donor.handle}.jpg`} sx={{ width: 100, height: 100 }} /></a></div>);
       }
   }
 

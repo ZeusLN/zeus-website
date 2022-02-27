@@ -54,13 +54,14 @@ const scrapeTwitterProfilePic = async (handle, donationId) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
+    console.log('Attempting to scrape Twitter picture for', handle);
+
     page.on('response', async (response) => {
         let url = response.url();
         if (response.request().resourceType() === 'image') {
             /**
              * Filter to only collect profile pictures
              */
-            console.log(url);
             if (url.match('(https://pbs.twimg.com/profile_images/(.*))')) {
                 console.log(url);
                 request.head(url, function (err, res, body) {
