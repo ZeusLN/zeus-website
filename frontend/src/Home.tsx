@@ -46,7 +46,7 @@ const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
     </a>
     {signatures && <>
         <p className="downloadDetails">Latest release: {config.latestVersion}</p>
-        <p className="downloadDetails"><a href={signatureUrl}>Developer Signature</a> | <a href="https://zeusln.app/PGP.txt">PGP key</a></p>
+        <p className="downloadDetails"><a href={signatureUrl}>Developer Signature</a> | <a href="/PGP.txt">PGP key</a></p>
     </>}
   </>
 );
