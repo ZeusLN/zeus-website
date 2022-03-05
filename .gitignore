@@ -10,6 +10,9 @@
 /backend/config.json
 /frontend/src/config.json
 
+# build
+frontend/build.zip
+
 # twitter images
 /backend/public/twitter-images/
 
