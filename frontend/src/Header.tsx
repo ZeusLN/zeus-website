@@ -24,6 +24,7 @@ function Header() {
           <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link href="https://store.zeusln.app" target="_blank">Store</Nav.Link>
+            <Nav.Link href="https://docs.zeusln.app" target="_blank">Documentation</Nav.Link>
             <Link to="/about">
               <Nav.Link href="#about">About</Nav.Link>
             </Link>
