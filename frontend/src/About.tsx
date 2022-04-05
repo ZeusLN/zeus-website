@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import { Button, makeStyles } from '@material-ui/core';
 import LoadingButton from '@mui/lab/LoadingButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import Header from './Header';
+import Footer from './Footer';
+
 import logo from './images/zeus-logo.svg';
 
 // social
-import github from './images/github-alt.svg';
-import telegram from './images/telegram-alt.svg';
-import twitter from './images/twitter-alt.svg';
+import github from './images/github.svg';
+import telegram from './images/telegram.svg';
+import twitter from './images/twitter.svg';
 
 // implementations
 import lnd from './images/implementations/lnd.webp';
@@ -68,21 +70,17 @@ export default function About() {
   const [data, setData] = useState<null |  Array<donor>>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [donationError, setDonationError] = useState('');
-  const [makeDonation, toggleDonation] = useState(false);
-  const [donationType, setDonationType] = useState('community');
-  const [twitterHandle, setTwitterHandle] = useState('');
 
   const useStyles = makeStyles((theme) => ({
-  mainButton: {
-    opacity: 1,
-    background: theme.palette.getContrastText(theme.palette.error.main),
-    '&:hover': {
-       cursor: 'pointer',
-       backgroundColor: '#FFD93F'
+    mainButton: {
+      opacity: 1,
+      background: '#FFD93F',
+      '&:hover': {
+         cursor: 'pointer',
+         backgroundColor: '#D6AB00'
+      }
     }
-  }
-}));
+  }));
 
   useEffect(() => {
       setLoading(true);
@@ -104,27 +102,6 @@ export default function About() {
               setLoading(false);
           })
   }, []);
-
-  const handleInput = (event: any) => {
-      setTwitterHandle(event.target.value);
-  };
-
-  const makeDonationCall = (handle: string) => {
-      axios.post(`${process.env.NODE_ENV === 'development' ? '' : '/api'}/donations/makeDonation`, {
-          handle: twitterHandle
-      })
-      .then((response: any) => {
-          console.log(response);
-          if (response.data && response.data.checkoutLink) {
-              window.open(response.data.checkoutLink, '_blank');
-          } else {
-              setDonationError('Error communicating with BTCPay Server. Please try again later.');
-          }
-      })
-      .catch(function (error) {
-          setDonationError('Error communicating with BTCPay Server. Please try again later.');
-      });
-  };
 
   const donorDisplay = [];
 
@@ -196,177 +173,135 @@ export default function About() {
 
   const classes = useStyles();
 
-  if (makeDonation) {
-      return (
-          <div className="About">
-            <header className="App-header">
-                <div className="Donate">
-                    <div className="Donation-types">
-                        <button onClick={() => setDonationType('supporter')} className={donationType === 'supporter' ? 'Donation-type-highlighted' : 'Donation-type'}>
-                            <h3>Supporter</h3>
-                            <p className="amount">Any amount</p>
-                            <p className="Donation-description">Make a donation and support the project</p>
-                        </button>
-                        <button onClick={() => setDonationType('community')} className={donationType === 'community' ? 'Donation-type-highlighted' : 'Donation-type'}>
-                            <h3>Olympian</h3>
-                            <p className="highlighted-amount"><span>1M</span> sats</p>
-                            <p className="Donation-description">Display your Twitter profile photo on our About page</p>
-                        </button>
-                        <button onClick={() => setDonationType('corporate')} className={donationType === 'corporate' ? 'Donation-type-highlighted' : 'Donation-type'}>
-                            <h3>Corporate</h3>
-                            <p className="highlighted-amount"><span>100M</span> sats</p>
-                            <p className="Donation-description">Link your organization's website on our About page</p>
-                        </button>
-                    </div>
-                    {donationType === 'supporter' && <a href="https://pay.zeusln.app/" target="_blank" rel="noreferrer"><Button className={classes.mainButton}>Make donation</Button></a>}
-                    {donationType === 'community' && <>
-                        <p style={{ color: 'red' }}>{donationError}</p>
-                        <div style={{ marginBottom: 20 }}>
-                            <span className="twitter-handle">
-                                @
-                                <input style={{ padding: 10, backgroundColor: '#242930', color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
-                            </span>
-                        </div>
-                        {twitterHandle && <Button
-                            className={classes.mainButton}
-                            onClick={() => makeDonationCall(twitterHandle)}
-                        >
-                            Make donation
-                        </Button>}
-                    </>}
-                    {donationType === 'corporate' && <a href="mailto:zeusln@tutanota.com?subject=Corporate Donation" target="_blank" rel="noreferrer"><Button className={classes.mainButton}>Get in touch</Button></a>}
-                    <div style={{ marginTop: 20 }}>
-                        <Button className={classes.mainButton} onClick={() => toggleDonation(false)}>Go back</Button>
-                    </div>
-                </div>
-            </header>
-          </div>
-      );
-  }
-
   return (
-    <div className="About">
-      <header className="App-header">
-        <p className="Zeus-intro">
-            <img
-              src={logo}
-              height="110"
-              className="d-inline-block align-top"
-              alt="Zeus"
-            />
-            <p className="Zeus-intro-text">Zeus is a Bitcoin Lightning wallet that gives users complete control over how they make bitcoin payments.</p>
-            <div className="social2">
-              <a href="https://github.com/ZeusLN/zeus" target="_blank" rel="noreferrer">
-                <img
-                  src={github}
-                  height="100"
-                  className="d-inline-block align-top"
-                  alt="GitHub"
-                />
-              </a>
-              <a href="https://t.me/ZeusLN" target="_blank" rel="noreferrer">
-                <img
-                  src={telegram}
-                  height="100"
-                  className="d-inline-block align-top"
-                  alt="Telegram"
-                />
-              </a>
-              <a href="https://twitter.com/ZeusLN" target="_blank" rel="noreferrer">
-                <img
-                  src={twitter}
-                  height="100"
-                  className="d-inline-block align-top"
-                  alt="Twitter"
-                />
-              </a>
-            </div>
-        </p>
-        <p className="About-section">
-            <h3 id="communitySponsors">Community Sponsors ⚡❤️</h3>
-            {loading && <LoadingButton loading={loading} sx={{ width: 250, height: 250 }} />}
-            <div className="sectionContent">
-                {!error ? donorDisplay.reverse() : <p style={{ color: '#ffcccb' }}>Error fetching community sponsors. Please check back later.</p>}
-            </div>
-            <div className="donateButton">
-                <Button className={classes.mainButton} onClick={() => toggleDonation(true)}>Become a Community Sponsor</Button>
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Supported Lightning Implementations</h3>
-            <div className="sectionContent">
-                {implementationDisplay}
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Community Integrations 🔌</h3>
-            <p className="About-text">You can connect Zeus to these platforms</p>
-            <div className="sectionContent">
-                {integrationDisplay}
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Friends and Integrated Services 🤜🤛</h3>
-            <p className="About-text">You'll find these services integrated in Zeus today or in the near future</p>
-            <div className="sectionContent">
-                {frensDisplay}
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Branding and Design Contributors</h3>
-            <div className="sectionContent">
-                {designDisplay}
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Translators</h3>
-            <p className="About-text">67 translators and counting...</p>
-            <Button className={classes.mainButton} onClick={() => window.open('https://www.transifex.com/ZeusLN/zeus/', '_link')}>Transifex</Button>
-        </p>
-        <p className="About-section">
-            <h3>Code Contributors</h3>
-            <p className="About-text">Here are our top contributors on GitHub</p>
-            <Button className={classes.mainButton} onClick={() => window.open('https://github.com/ZeusLN/zeus/graphs/contributors', '_link')}>GitHub</Button>
-            <div className="sectionContent">
-                {contributorsDisplay}
-            </div>
-        </p>
-        <p className="About-section">
-            <h3>Maintainers</h3>
-            <p className="About-text">Zeus is an open-source, self-custody, Bitcoin wallet. Don’t trust us? You don’t have to.</p>
-            <Button className={classes.mainButton} onClick={() => window.open('https://github.com/ZeusLN/zeus/graphs/contributors', '_link')}>GitHub</Button>
-            <div className="sectionContent">
-                {maintainersDisplay}
-            </div>
-        </p>
+    <div className="App">
+      <Header />
+      <div className="About">
+        <header className="App-header">
+          <p className="Zeus-intro">
+              <img
+                src={logo}
+                height="110"
+                className="d-inline-block align-top"
+                alt="Zeus"
+              />
+              <p className="Zeus-intro-text">Zeus is a Bitcoin Lightning wallet that gives users complete control over how they make bitcoin payments.</p>
+              <div className="social2">
+                <a href="https://github.com/ZeusLN/zeus" target="_blank" rel="noreferrer">
+                  <img
+                    src={github}
+                    height="70"
+                    className="d-inline-block align-top"
+                    alt="GitHub"
+                  />
+                </a>
+                <a href="https://t.me/ZeusLN" target="_blank" rel="noreferrer">
+                  <img
+                    src={telegram}
+                    height="70"
+                    className="d-inline-block align-top"
+                    alt="Telegram"
+                  />
+                </a>
+                <a href="https://twitter.com/ZeusLN" target="_blank" rel="noreferrer">
+                  <img
+                    src={twitter}
+                    height="70"
+                    className="d-inline-block align-top"
+                    alt="Twitter"
+                  />
+                </a>
+              </div>
+              <div className="donateButton">
+                  <a href="sponsor">
+                      <Button className={classes.mainButton}>Become a Community Sponsor</Button>
+                  </a>
+              </div>
+          </p>
+          <p className="About-section">
+              <h3 id="communitySponsors">Community Sponsors ⚡❤️</h3>
+              {loading && <LoadingButton loading={loading} sx={{ width: 250, height: 250 }} />}
+              <div className="sectionContent">
+                  {!error ? donorDisplay.reverse() : <p style={{ color: '#ffcccb' }}>Error fetching community sponsors. Please check back later.</p>}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Supported Lightning Implementations</h3>
+              <div className="sectionContent">
+                  {implementationDisplay}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Community Integrations 🔌</h3>
+              <p className="About-text">You can connect Zeus to these platforms</p>
+              <div className="sectionContent">
+                  {integrationDisplay}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Friends and Integrated Services 🤜🤛</h3>
+              <p className="About-text">You'll find these services integrated in Zeus today or in the near future</p>
+              <div className="sectionContent">
+                  {frensDisplay}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Branding and Design Contributors</h3>
+              <div className="sectionContent">
+                  {designDisplay}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Translators</h3>
+              <p className="About-text">67 translators and counting...</p>
+              <Button className={classes.mainButton} onClick={() => window.open('https://www.transifex.com/ZeusLN/zeus/', '_link')}>Transifex</Button>
+          </p>
+          <p className="About-section">
+              <h3>Code Contributors</h3>
+              <p className="About-text">Here are our top contributors on GitHub</p>
+              <Button className={classes.mainButton} onClick={() => window.open('https://github.com/ZeusLN/zeus/graphs/contributors', '_link')}>GitHub</Button>
+              <div className="sectionContent">
+                  {contributorsDisplay}
+              </div>
+          </p>
+          <p className="About-section">
+              <h3>Maintainers</h3>
+              <p className="About-text">Zeus is an open-source, self-custody, Bitcoin wallet. Don’t trust us? You don’t have to.</p>
+              <Button className={classes.mainButton} onClick={() => window.open('https://github.com/ZeusLN/zeus/graphs/contributors', '_link')}>GitHub</Button>
+              <div className="sectionContent">
+                  {maintainersDisplay}
+              </div>
+          </p>
 
-        <div className="appStores3">
-          <a href="https://apps.apple.com/us/app/zeus-ln/id1456038895" target="_blank" rel="noreferrer">
-            <img
-              src={appleAppStore}
-              width="240"
-              className="d-inline-block align-top"
-              alt="Apple App Store"
-            />
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=app.zeusln.zeus" target="_blank" rel="noreferrer">
-            <img
-              src={googlePlay}
-              width="240"
-              className="d-inline-block align-top"
-              alt="Google Play"
-            />
-          </a>
-          <a href={androidUrl} target="_blank" rel="noreferrer">
-            <img
-              src={androidDownload}
-              width="240"
-              className="d-inline-block align-top"
-              alt="Android Download"
-            />
-          </a>
-        </div>
-      </header>
+          <div className="appStores3">
+            <a href="https://apps.apple.com/us/app/zeus-ln/id1456038895" target="_blank" rel="noreferrer">
+              <img
+                src={appleAppStore}
+                width="240"
+                className="d-inline-block align-top"
+                alt="Apple App Store"
+              />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=app.zeusln.zeus" target="_blank" rel="noreferrer">
+              <img
+                src={googlePlay}
+                width="240"
+                className="d-inline-block align-top"
+                alt="Google Play"
+              />
+            </a>
+            <a href={androidUrl} target="_blank" rel="noreferrer">
+              <img
+                src={androidDownload}
+                width="240"
+                className="d-inline-block align-top"
+                alt="Android Download"
+              />
+            </a>
+          </div>
+        </header>
+      </div>
+      <Footer />
     </div>
   );
 }

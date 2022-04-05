@@ -1,3 +1,10 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #242930;
+}
+
 .App {
   text-align: center;
   color: #fff;
@@ -9,6 +16,13 @@
   background-position: center;
   position: absolute;
   background-attachment: fixed;
+  width: 100%;
+}
+
+.App-basic {
+  text-align: center;
+  background-color: #242930;
+  color: #fff;
   width: 100%;
 }
 
@@ -299,10 +313,13 @@ a {
     transition: .4s all;
 }
 
+.donateButton {
+    margin-top: 25px;
+}
+
 .Donate {
     padding-top: 80px;
     background-color: #242930;
-    padding-bottom: 100px;
 }
 
 .Donation-types {

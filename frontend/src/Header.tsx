@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props: any) {
   return (
     <Navbar bg="transparent" variant="dark" expand="lg">
       <Container>
@@ -19,16 +19,16 @@ function Header() {
             />
           </Navbar.Brand>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {!props.hideNav && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>
-          <Nav>
+          {!props.hideNav && <Nav>
             <Nav.Link href="https://store.zeusln.app" target="_blank">Store</Nav.Link>
             <Nav.Link href="https://docs.zeusln.app" target="_blank">Documentation</Nav.Link>
             <Link to="/about">
               <Nav.Link href="#about">About</Nav.Link>
             </Link>
-          </Nav>
+          </Nav>}
         </Navbar.Collapse>
       </Container>
     </Navbar>
