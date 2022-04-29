@@ -219,7 +219,7 @@ export default function About() {
               </div>
           </p>
           <p className="About-section">
-              <h3 id="communitySponsors">Community Sponsors ⚡❤️</h3>
+              <h3 id="communitySponsors">Olympians</h3>
               {loading && <LoadingButton loading={loading} sx={{ width: 250, height: 250 }} />}
               <div className="sectionContent">
                   {!error ? donorDisplay.reverse() : <p style={{ color: '#ffcccb' }}>Error fetching community sponsors. Please check back later.</p>}
