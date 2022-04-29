@@ -11,6 +11,7 @@ export default function Sponsor() {
 
   const [donationType, setDonationType] = useState('community');
   const [twitterHandle, setTwitterHandle] = useState('');
+  const [amount, setAmount] = useState('1000000');
 
   const useStyles = makeStyles((theme) => ({
     mainButton: {
@@ -23,13 +24,32 @@ export default function Sponsor() {
     }
   }));
 
-  const handleInput = (event: any) => {
+  const handleAmountInput = (event: any) => {
+      const amount = event.target.value;
+      if (isNaN(amount)) {
+          setDonationError('Invalid amount');
+          return;
+      }
+      if (!Number.isInteger(Number(amount))) {
+          setDonationError('Whole sats only. Sorry.');
+          return;
+      }
+      if (Number(amount) < 1000000) {
+          setDonationError('Amount too small for Olympian level. Please select supporter.');
+          return;
+      }
+      setDonationError('');
+      setAmount(amount);
+  };
+
+  const handleTwitterInput = (event: any) => {
       setTwitterHandle(event.target.value);
   };
 
-  const makeDonationCall = (handle: string) => {
+  const makeDonationCall = (handle: string, amount: string) => {
       axios.post(`${process.env.NODE_ENV === 'development' ? '' : '/api'}/donations/makeDonation`, {
-          handle: twitterHandle
+          handle: twitterHandle,
+          amount
       })
       .then((response: any) => {
           console.log(response);
@@ -60,7 +80,7 @@ export default function Sponsor() {
                       </button>
                       <button onClick={() => setDonationType('community')} className={donationType === 'community' ? 'Donation-type-highlighted' : 'Donation-type'}>
                           <h3>Olympian</h3>
-                          <p className="highlighted-amount"><span>1M</span> sats</p>
+                          <p className="highlighted-amount"><span>1M</span>+ sats</p>
                           <p className="Donation-description">Display your Twitter profile photo on our About page</p>
                       </button>
                       <button onClick={() => setDonationType('corporate')} className={donationType === 'corporate' ? 'Donation-type-highlighted' : 'Donation-type'}>
@@ -73,14 +93,19 @@ export default function Sponsor() {
                   {donationType === 'community' && <>
                       <p style={{ color: 'red' }}>{donationError}</p>
                       <div style={{ marginBottom: 20 }}>
+                          <span className="amount">
+                              <input style={{ padding: 10, backgroundColor: '#242930', color: '#FFD93F', borderWidth: 0, width: 128 }} onChange={handleAmountInput} placeholder="Amount (sats)" type="text" />
+                          </span>
+                      </div>
+                      <div style={{ marginBottom: 20 }}>
                           <span className="twitter-handle">
                               @
-                              <input style={{ padding: 10, backgroundColor: '#242930', color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleInput} placeholder="Twitter handle" type="text" />
+                              <input style={{ padding: 10, backgroundColor: '#242930', color: '#2b74b4', borderWidth: 0, width: 128 }} onChange={handleTwitterInput} placeholder="Twitter handle" type="text" />
                           </span>
                       </div>
                       {twitterHandle && <Button
                           className={classes.mainButton}
-                          onClick={() => makeDonationCall(twitterHandle)}
+                          onClick={() => makeDonationCall(twitterHandle, amount)}
                       >
                           Make donation
                       </Button>}

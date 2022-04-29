@@ -7,8 +7,28 @@ import knex from './../knex';
 import * as config from './../config.json';
 
 router.route('/makeDonation').post(async (req, res) => {
+    const amount = req.body.amount;
+    if (isNaN(amount)) {
+        res.json({
+            success: false,
+            error: 'Invalid amount'
+        });
+    }
+    if (!Number.isInteger(Number(amount))) {
+        res.json({
+            success: false,
+            error: 'Whole sats only. Sorry.'
+        });
+    }
+    if (Number(amount) < 1000000) {
+        res.json({
+            success: false,
+            error: 'Amount too small for Olympian level. Please select supporter.'
+        });
+    }
+
     const data = {
-        amount: config.supportAmtSats,
+        amont,
         currency: 'sats',
         checkout: {
             redirectURL: 'https://zeusln.app/about'
@@ -27,6 +47,7 @@ router.route('/makeDonation').post(async (req, res) => {
             await knex('sponsors').insert({
                 handle: req.body.handle,
                 invoice: response.data.id,
+                amount,
                 status: 'PENDING'
             });
             res.json({
