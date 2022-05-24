@@ -8,52 +8,64 @@ import telegram from './images/telegram.svg';
 import twitter from './images/twitter.svg';
 
 function Footer() {
-  return (
-    <div className="App-footer">
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Container>
-          <Link to="/">
-            <Navbar.Brand>
-              <img
-                src={logo}
-                width="300"
-                height="55"
-                className="d-inline-block align-top"
-                alt="Zeus"
-                style={{ marginBottom: 30 }}
-              />
-            </Navbar.Brand>
-          </Link>
-          <div className="social">
-            <a href="https://github.com/ZeusLN/zeus" target="_blank" rel="noreferrer">
-              <img
-                src={github}
-                height="55"
-                className="d-inline-block align-top"
-                alt="GitHub"
-              />
-            </a>
-            <a href="https://t.me/ZeusLN" target="_blank" rel="noreferrer">
-              <img
-                src={telegram}
-                height="55"
-                className="d-inline-block align-top"
-                alt="Telegram"
-              />
-            </a>
-            <a href="https://twitter.com/ZeusLN" target="_blank" rel="noreferrer">
-              <img
-                src={twitter}
-                height="55"
-                className="d-inline-block align-top"
-                alt="Twitter"
-              />
-            </a>
-          </div>
-        </Container>
-      </Navbar>
-    </div>
-  );
+    return (
+        <div className="App-footer">
+            <Navbar bg="dark" variant="dark" expand="lg">
+                <Container>
+                    <Link to="/">
+                        <Navbar.Brand>
+                            <img
+                                src={logo}
+                                width="300"
+                                height="55"
+                                className="d-inline-block align-top"
+                                alt="Zeus"
+                                style={{ marginBottom: 30 }}
+                            />
+                        </Navbar.Brand>
+                    </Link>
+                    <div className="social">
+                        <a
+                            href="https://github.com/ZeusLN/zeus"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={github}
+                                height="55"
+                                className="d-inline-block align-top"
+                                alt="GitHub"
+                            />
+                        </a>
+                        <a
+                            href="https://t.me/ZeusLN"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={telegram}
+                                height="55"
+                                className="d-inline-block align-top"
+                                alt="Telegram"
+                            />
+                        </a>
+                        <a
+                            href="https://twitter.com/ZeusLN"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={twitter}
+                                height="55"
+                                className="d-inline-block align-top"
+                                alt="Twitter"
+                            />
+                        </a>
+                    </div>
+                </Container>
+            </Navbar>
+        </div>
+    );
 }
 
 export default Footer;
