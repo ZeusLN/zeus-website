@@ -20,10 +20,10 @@ router.route('/makeDonation').post(async (req, res) => {
             error: 'Whole sats only. Sorry.'
         });
     }
-    if (Number(amount) < 1000000) {
+    if (Number(amount) < 10000) {
         res.json({
             success: false,
-            error: 'Amount too small for Olympian level. Please select supporter.'
+            error: 'Amount too small for tracking. Please make anonymous donation at https://pay.zeusln.app'
         });
     }
 
