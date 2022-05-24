@@ -227,6 +227,17 @@ p.highlighted-text span {
   display: block;
 }
 
+.h5, h5 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: block;
+  align-items: center;
+}
+
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
     background-color: #242930 !important;
 }
@@ -328,14 +339,12 @@ a {
 }
 
 .Donate {
-    padding-top: 80px;
     background-color: #242930;
 }
 
 .Donation-types {
     align-content: center;
     margin: 0 auto;
-    padding-bottom: 40px;
 }
 
 .Donation-type {
@@ -348,7 +357,7 @@ a {
     background-position: center;
     border-width: 0px;
     background-color: transparent;
-    background-image: url('keysign.png');
+    background-image: url('images/wreath.png');
     background-size: 100%;
 }
 
@@ -357,39 +366,46 @@ a {
   width: 360px;
   border-radius: 360px;
   margin: 20px;
-  box-shadow: 0px 0px 2px 2px rgb(255, 218, 70);
   transition: .2s all;
+  background-image: url('images/wreath-highlight.png');
 }
 
 .Donation-type-highlighted {
   color: #fff;
-  height: 360px;
-  width: 360px;
+  height: 500px;
+  width: 491px;
   border-radius: 360px;
   margin: 20px;
   background-color: transparent;
-  background-image: url('keysign-highlight.png');
+  background-image: url('images/wreath-highlight.png'), url('images/glow.png');
   background-size: 100%;
   border-width: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .Donation-description {
-    margin: 0 100px;
+  margin: 0 100px;
 }
 
 span.twitter-handle {
-	    padding: 10px;
-      padding-right: 10px;
+  padding: 10px;
+  padding-right: 10px;
+}
+
+span.amount {
+  background-color: #fff;
+  color: #fff;
 }
 
 p.amount {
-	    font-size: 20px;
-      font-weight: 800;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .PrivacyPolicy {
-    margin: 30px;
-    text-align: left;
+  margin: 30px;
+  text-align: left;
 }
 
 
