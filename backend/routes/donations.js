@@ -28,7 +28,7 @@ router.route('/makeDonation').post(async (req, res) => {
     }
 
     const data = {
-        amont,
+        amount,
         currency: 'sats',
         checkout: {
             redirectURL: 'https://zeusln.app/about'
