@@ -89,7 +89,7 @@ export default function About() {
         fetch(
             `${
                 process.env.NODE_ENV === 'development' ? '' : '/api'
-            }/sponsors/getCommunitySponsors`
+            }/sponsors/getSponsors`
         )
             .then((response) => {
                 if (response.ok) {

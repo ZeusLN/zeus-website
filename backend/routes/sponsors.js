@@ -17,6 +17,13 @@ const getCommunitySponsors = async () => {
 };
 
 router.get('/getCommunitySponsors', async (req, res) => {
+    const results = await knex('sponsors')
+        .select('handle')
+        .where({ status: 'DISPLAY' });
+    res.send(results);
+});
+
+router.get('/getSponsors', async (req, res) => {
     const results = await getCommunitySponsors();
     const mortals = results.filter(
         (entry) => entry.sum >= 100000 && entry.sum < 1000000
