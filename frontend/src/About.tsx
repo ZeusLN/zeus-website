@@ -299,6 +299,15 @@ export default function About() {
         </div>
     );
 
+    // <div className="avatar">
+    //     <a
+    //         href={'https://amboss.space/'}
+    //         target="_blank"
+    //         rel="noreferrer"
+    //     >
+    //         <Avatar src={amboss} sx={{ width: 100, height: 100 }} />
+    //     </a>
+    // </div>
     const frensDisplay = (
         <div className="avatarDisplay">
             <div className="avatar">
@@ -310,20 +319,20 @@ export default function About() {
                     <Avatar src={mempool} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
-            <div className="avatar">
-                <a
-                    href={'https://amboss.space/'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={amboss} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
         </div>
     );
 
     const contributorsDisplay = (
         <div className="avatarDisplay">
+            <div className="avatar">
+                <a
+                    href={'https://github.com/deregs'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={deregs} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
             <div className="avatar">
                 <a
                     href={'https://github.com/shubhamkmr04'}
@@ -370,15 +379,6 @@ export default function About() {
                     rel="noreferrer"
                 >
                     <Avatar src={marytsahas} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
-            <div className="avatar">
-                <a
-                    href={'https://github.com/deregs'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={deregs} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
         </div>
@@ -604,10 +604,9 @@ export default function About() {
                         </div>
                     </p>
                     <p className="About-section">
-                        <h3>Friends and Integrated Services 🤜🤛</h3>
+                        <h3>Integrated Services 🤜🤛</h3>
                         <p className="About-text">
-                            You'll find these services integrated in Zeus today
-                            or in the near future
+                            You'll find these services integrated in Zeus
                         </p>
                         <div className="sectionContent">{frensDisplay}</div>
                     </p>
