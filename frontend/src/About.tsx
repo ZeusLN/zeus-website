@@ -32,7 +32,7 @@ import start9 from './images/integrations/start9.png';
 
 // integrations
 import mempool from './images/frens/mempool.jpg';
-import amboss from './images/frens/amboss.jpg';
+// import amboss from './images/frens/amboss.jpg';
 
 // top contributors
 import shubhamkmr04 from './images/contributors/shubhamkmr04.jpg';
