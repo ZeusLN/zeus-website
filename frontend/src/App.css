@@ -349,10 +349,10 @@ a {
 
 .Donation-type {
     color: #fff;
-    height: 360px;
+    min-height: 500px;
     width: 360px;
+    max-width: 100%;
     border-radius: 360px;
-    margin: 20px;
     background-repeat: no-repeat;
     background-position: center;
     border-width: 0px;
@@ -365,7 +365,6 @@ a {
   height: 360px;
   width: 360px;
   border-radius: 360px;
-  margin: 20px;
   transition: .2s all;
   background-image: url('images/wreath-highlight.png');
 }
@@ -374,8 +373,8 @@ a {
   color: #fff;
   height: 500px;
   width: 491px;
+  max-width: 100%;
   border-radius: 360px;
-  margin: 20px;
   background-color: transparent;
   background-image: url('images/wreath-highlight.png'), url('images/glow.png');
   background-size: 100%;
