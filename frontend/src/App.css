@@ -9,7 +9,7 @@ html,body {
   text-align: center;
   color: #fff;
   background-color: #242930;
-  background-image: url('keysign.png');
+  background-image: url('images/keysign.png');
   background-color: #242930;
   background-size: 42%;
   background-repeat: no-repeat;
@@ -128,7 +128,7 @@ p.highlighted-text span {
 }
 
 .App-footer {
-  background-image: url('keysign.png');
+  background-image: url('images/keysign.png');
   background-color: #242930;
   background-size: 100%;
   background-repeat: no-repeat;
