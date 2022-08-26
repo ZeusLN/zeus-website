@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Sponsor from './Sponsor';
 import PrivacyPolicy from './PrivacyPolicy';
+import Download from './Download';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/sponsor" element={<Sponsor />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/download" element={<Download />} />
             </Routes>
         </Router>
     );

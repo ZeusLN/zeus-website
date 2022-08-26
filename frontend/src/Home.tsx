@@ -189,7 +189,10 @@ function Home() {
                 <div className="Home-section4">
                     <img
                         src={zeusLogo}
-                        width="400"
+                        style={{
+                            width: '100%',
+                            maxWidth: '500px'
+                        }}
                         className="d-inline-block align-top"
                         alt="Zeus mascot"
                     />
