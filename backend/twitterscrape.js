@@ -39,7 +39,7 @@ const twitterUsername = 'ZeusLN';
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:97.0) Gecko/20100101 Firefox/97.0'
     );
     await page.goto('https://twitter.com/' + twitterUsername + '/photo');
-    await page.waitFor(1000);
+    await page.waitForTimeout(1000);
     // debug
     // await page.screenshot({ path: 'example.png' });
     await browser.close();
