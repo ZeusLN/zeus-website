@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import createTable from './createTable';
 import checkInvoices from './checkInvoices';
 
-import * as config from './config.json';
+import config from './config.json';
 
 /* eslint no-console: 0 */
 

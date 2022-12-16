@@ -16,7 +16,7 @@ import zeusLogo from './images/Zeus.svg';
 
 import map from './images/map.png';
 
-import * as config from './config.json';
+import config from './config.json';
 
 const androidUrl = `/zeus-${config.latestVersion}.apk`;
 const signatureUrl = `/zeus-${config.latestVersion}-signature.txt`;

@@ -7,7 +7,7 @@
 // );
 
 import knex from './knex';
-import * as config from './config.json';
+import config from './config.json';
 
 async function createTable() {
     console.log('creating table');

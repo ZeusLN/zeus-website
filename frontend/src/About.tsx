@@ -60,7 +60,7 @@ import appleAppStore from './images/apple-app-store.png';
 import googlePlay from './images/google-play.png';
 import androidDownload from './images/android-download.png';
 
-import * as config from './config.json';
+import config from './config.json';
 
 const androidUrl = `/zeus-${config.latestVersion}.apk`;
 

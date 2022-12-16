@@ -11,7 +11,7 @@ import androidDownload from './images/android-download.png';
 
 import fdroid from './images/fdroid.png';
 
-import * as config from './config.json';
+import config from './config.json';
 
 const androidUrl = `/zeus-${config.latestVersion}.apk`;
 const signatureUrl = `/zeus-${config.latestVersion}-signature.txt`;

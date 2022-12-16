@@ -1,5 +1,5 @@
 const knex = require('knex');
-import * as config from './config.json';
+import config from './config.json';
 
 const knexDB = knex({
     client: 'pg',

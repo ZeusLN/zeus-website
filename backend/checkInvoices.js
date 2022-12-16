@@ -5,7 +5,7 @@ const request = require('request');
 const puppeteer = require('puppeteer');
 import knex from './knex';
 
-import * as config from './config.json';
+import config from './config.json';
 
 const checkInvoices = async () => {
     const pendingResults = await knex('sponsors')
