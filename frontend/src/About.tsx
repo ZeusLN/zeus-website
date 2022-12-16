@@ -39,8 +39,11 @@ import shubhamkmr04 from './images/contributors/shubhamkmr04.jpg';
 import gabidi from './images/contributors/gabidi.png';
 import futurepaul from './images/contributors/futurepaul.jpg';
 import fiatjaf from './images/contributors/fiatjaf.jpg';
-import marytsahas from './images/contributors/marytsahas.png';
 import deregs from './images/contributors/deregs.jpg';
+import pseudozach from './images/contributors/pseudozach.jpg';
+import aussedatlo from './images/contributors/aussedatlo.jpg';
+import Talej from './images/contributors/Talej.jpg';
+import otech47 from './images/contributors/otech47.jpg';
 
 // design contributors
 import bitcoin_design from './images/design/bitcoin_design.jpg';
@@ -347,11 +350,47 @@ export default function About() {
             </div>
             <div className="avatar">
                 <a
+                    href={'https://github.com/pseudozach'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={pseudozach} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://github.com/aussedatlo'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={aussedatlo} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
                     href={'https://github.com/gabidi'}
                     target="_blank"
                     rel="noreferrer"
                 >
                     <Avatar src={gabidi} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://github.com/Talej'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={Talej} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://github.com/otech47'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={otech47} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
             <div className="avatar">
@@ -370,15 +409,6 @@ export default function About() {
                     rel="noreferrer"
                 >
                     <Avatar src={fiatjaf} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
-            <div className="avatar">
-                <a
-                    href={'https://github.com/marytsahas'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={marytsahas} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
         </div>
@@ -604,7 +634,7 @@ export default function About() {
                         </div>
                     </p>
                     <p className="About-section">
-                        <h3>Integrated Services 🤜🤛</h3>
+                        <h3>Integrated Services</h3>
                         <p className="About-text">
                             You'll find these services integrated in Zeus
                         </p>
@@ -617,7 +647,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Translators</h3>
                         <p className="About-text">
-                            67 translators and counting...
+                            71 translators and counting...
                         </p>
                         <Button
                             className={classes.mainButton}
