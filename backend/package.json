@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "prettier": "prettier --check --write '**/*.js*'"
+        "prettier": "prettier --check '**/*.js*'",
+        "prettier-write": "prettier --check --write '**/*.js*'"
     },
     "author": "Evan Kaloudis",
     "license": "ISC",
