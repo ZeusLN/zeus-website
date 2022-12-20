@@ -19,7 +19,7 @@ import map from './images/map.png';
 import config from './config.json';
 
 const androidUrl = `/zeus-${config.latestVersion}.apk`;
-const signatureUrl = `/zeus-${config.latestVersion}-signature.txt`;
+const manifestUrl = `/manifest-${config.latestVersion}.txt`;
 
 const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
     <>
@@ -61,7 +61,7 @@ const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
                     Latest release: {config.latestVersion}
                 </p>
                 <p className="downloadDetails">
-                    <a href={signatureUrl}>Developer Signature</a> |{' '}
+                    <a href={manifestUrl}>Manifest</a> |{' '}
                     <a href="/PGP.txt">PGP key</a>
                 </p>
             </>
