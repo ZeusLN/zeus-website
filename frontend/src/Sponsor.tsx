@@ -98,9 +98,8 @@ export default function Sponsor() {
                 }
             )
             .then((response: any) => {
-                console.log(response);
                 if (response.data && response.data.checkoutLink) {
-                    window.open(response.data.checkoutLink, '_blank');
+                    window.open(response.data.checkoutLink, '_self');
                 } else {
                     setDonationError(
                         'Error communicating with BTCPay Server. Please try again later.'
