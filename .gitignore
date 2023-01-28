@@ -13,8 +13,9 @@
 # build
 frontend/build.zip
 
-# twitter images
+# profile images
 /backend/public/twitter-images/
+/backend/public/nostr-images/
 
 # testing
 /coverage

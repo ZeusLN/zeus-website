@@ -66,6 +66,7 @@ const androidUrl = `/zeus-${config.latestVersion}.apk`;
 
 interface donor {
     handle: string;
+    type: string;
     imageUrl: string;
 }
 
@@ -125,7 +126,11 @@ export default function About() {
             olympianDisplay.push(
                 <div className="avatar">
                     <a
-                        href={`https://twitter.com/${donor.handle}`}
+                        href={
+                            donor.type === 'Nostr'
+                                ? `https://iris.to/#/profile/${donor.handle}`
+                                : `https://twitter.com/${donor.handle}`
+                        }
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -134,7 +139,11 @@ export default function About() {
                                 process.env.NODE_ENV === 'development'
                                     ? ''
                                     : '/api'
-                            }/twitter-images/${donor.handle}.jpg`}
+                            }${
+                                donor.type === 'Nostr'
+                                    ? '/nostr-images/'
+                                    : '/twitter-images/'
+                            }${donor.handle}.jpg`}
                             sx={{ width: 120, height: 120 }}
                         />
                     </a>
@@ -150,7 +159,11 @@ export default function About() {
             godDisplay.push(
                 <div className="avatar">
                     <a
-                        href={`https://twitter.com/${donor.handle}`}
+                        href={
+                            donor.type === 'Nostr'
+                                ? `https://iris.to/#/profile/${donor.handle}`
+                                : `https://twitter.com/${donor.handle}`
+                        }
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -159,7 +172,11 @@ export default function About() {
                                 process.env.NODE_ENV === 'development'
                                     ? ''
                                     : '/api'
-                            }/twitter-images/${donor.handle}.jpg`}
+                            }${
+                                donor.type === 'Nostr'
+                                    ? '/nostr-images/'
+                                    : '/twitter-images/'
+                            }${donor.handle}.jpg`}
                             sx={{ width: 100, height: 100 }}
                         />
                     </a>
@@ -175,7 +192,11 @@ export default function About() {
             mortalDisplay.push(
                 <div className="avatar">
                     <a
-                        href={`https://twitter.com/${donor.handle}`}
+                        href={
+                            donor.type === 'Nostr'
+                                ? `https://iris.to/#/profile/${donor.handle}`
+                                : `https://twitter.com/${donor.handle}`
+                        }
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -184,7 +205,11 @@ export default function About() {
                                 process.env.NODE_ENV === 'development'
                                     ? ''
                                     : '/api'
-                            }/twitter-images/${donor.handle}.jpg`}
+                            }${
+                                donor.type === 'Nostr'
+                                    ? '/nostr-images/'
+                                    : '/twitter-images/'
+                            }${donor.handle}.jpg`}
                             sx={{ width: 80, height: 80 }}
                         />
                     </a>

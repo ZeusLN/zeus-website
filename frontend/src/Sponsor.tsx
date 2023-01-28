@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, makeStyles } from '@material-ui/core';
+import { Button, Chip, makeStyles } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -10,7 +10,8 @@ export default function Sponsor() {
     const [donationError, setDonationError] = useState('');
 
     const [donationType, setDonationType] = useState('god');
-    const [twitterHandle, setTwitterHandle] = useState('');
+    const [handle, setHandle] = useState('');
+    const [handleType, setHandleType] = useState('Twitter');
     const [amount, setAmount] = useState('1000000');
 
     const useStyles = makeStyles((theme) => ({
@@ -82,18 +83,21 @@ export default function Sponsor() {
         }
     };
 
-    const handleTwitterInput = (event: any) => {
-        setTwitterHandle(event.target.value);
-    };
+    const handleInput = (event: any) => setHandle(event.target.value);
 
-    const makeDonationCall = (handle: string, amount: string) => {
+    const makeDonationCall = (
+        handle: string,
+        handleType: string,
+        amount: string
+    ) => {
         axios
             .post(
                 `${
                     process.env.NODE_ENV === 'development' ? '' : '/api'
                 }/donations/makeDonation`,
                 {
-                    handle: twitterHandle,
+                    handle,
+                    handleType,
                     amount
                 }
             )
@@ -234,38 +238,108 @@ export default function Sponsor() {
                                     sats
                                 </span>
                             </div>
-                            <div style={{ marginBottom: 20 }}>
-                                <span
-                                    className="twitter-handle"
+                            <div style={{ marginBottom: 15 }}>
+                                <Chip
                                     style={{
-                                        padding: 10,
-                                        backgroundColor: '#292a2d',
-                                        fontSize: 25,
-                                        borderRadius: 13
+                                        margin: 5,
+                                        color:
+                                            handleType === 'Twitter'
+                                                ? undefined
+                                                : '#e0e0e0'
                                     }}
-                                >
-                                    @
-                                    <input
+                                    onClick={() => setHandleType('Twitter')}
+                                    label="Twitter"
+                                    variant={
+                                        handleType === 'Twitter'
+                                            ? undefined
+                                            : 'outlined'
+                                    }
+                                />
+                                <Chip
+                                    style={{
+                                        margin: 5,
+                                        color:
+                                            handleType === 'Nostr'
+                                                ? undefined
+                                                : '#e0e0e0'
+                                    }}
+                                    onClick={() => setHandleType('Nostr')}
+                                    label="Nostr"
+                                    variant={
+                                        handleType === 'Nostr'
+                                            ? undefined
+                                            : 'outlined'
+                                    }
+                                />
+                            </div>
+                            {handleType === 'Nostr' && (
+                                <div style={{ marginBottom: 20 }}>
+                                    <span
+                                        className="nostr-handle"
                                         style={{
-                                            marginLeft: 5,
-                                            paddingLeft: 10,
-                                            backgroundColor: '#616468',
-                                            color: '#fff',
-                                            borderWidth: 0,
-                                            width: 280,
+                                            padding: 10,
+                                            backgroundColor: '#292a2d',
+                                            fontSize: 25,
                                             borderRadius: 13
                                         }}
-                                        onChange={handleTwitterInput}
-                                        placeholder="Twitter handle"
-                                        type="text"
-                                    />
-                                </span>
-                            </div>
-                            {twitterHandle && (
+                                    >
+                                        <input
+                                            style={{
+                                                marginLeft: 5,
+                                                paddingLeft: 10,
+                                                backgroundColor: '#616468',
+                                                color: '#fff',
+                                                borderWidth: 0,
+                                                width: 280,
+                                                borderRadius: 13
+                                            }}
+                                            onChange={handleInput}
+                                            placeholder="npub1xnf02f60r9v0e5kty33a404dm79zr7z2eepyrk5gsq3m7pwvsz2sazlpr5"
+                                            type="text"
+                                            value={handle}
+                                        />
+                                    </span>
+                                </div>
+                            )}
+                            {handleType === 'Twitter' && (
+                                <div style={{ marginBottom: 20 }}>
+                                    <span
+                                        className="twitter-handle"
+                                        style={{
+                                            padding: 10,
+                                            backgroundColor: '#292a2d',
+                                            fontSize: 25,
+                                            borderRadius: 13
+                                        }}
+                                    >
+                                        @
+                                        <input
+                                            style={{
+                                                marginLeft: 5,
+                                                paddingLeft: 10,
+                                                backgroundColor: '#616468',
+                                                color: '#fff',
+                                                borderWidth: 0,
+                                                width: 280,
+                                                borderRadius: 13
+                                            }}
+                                            onChange={handleInput}
+                                            placeholder="Twitter handle"
+                                            type="text"
+                                            value={handle}
+                                        />
+                                    </span>
+                                </div>
+                            )}
+                            {handle && (
                                 <Button
                                     className={classes.mainButton}
                                     onClick={() =>
-                                        makeDonationCall(twitterHandle, amount)
+                                        makeDonationCall(
+                                            handle,
+                                            handleType,
+                                            amount
+                                        )
                                     }
                                 >
                                     Make donation

@@ -16,6 +16,7 @@ async function createTable() {
         table.string('handle');
         table.string('invoice');
         table.string('status');
+        table.string('type');
         table.decimal('amount', 10, 3);
     });
 }
