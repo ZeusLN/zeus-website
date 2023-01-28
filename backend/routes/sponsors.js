@@ -25,19 +25,27 @@ router.get('/getCommunitySponsors', async (req, res) => {
     res.send(results);
 });
 
+// v1 (don't show Nostr)
+
 router.get('/getSponsors', async (req, res) => {
     const results = await getCommunitySponsors();
     const mortals = results.filter(
-        (entry) => entry.sum >= 100000 && entry.sum < 1000000
+        (entry) =>
+            entry.sum >= 100000 &&
+            entry.sum < 1000000 &&
+            entry.type === 'Twitter'
     );
     const gods = results.filter(
-        (entry) => entry.sum >= 1000000 && entry.sum < 100000000
+        (entry) =>
+            entry.sum >= 1000000 &&
+            entry.sum < 100000000 &&
+            entry.type === 'Twitter'
     );
-    const olympians = results.filter((entry) => entry.sum >= 100000000);
+    const olympians = results.filter(
+        (entry) => entry.sum >= 100000000 && entry.type === 'Twitter'
+    );
     res.send({ mortals, gods, olympians });
 });
-
-// v1 (don't show Nostr)
 
 router.get('/getMortals', async (req, res) => {
     const results = await getCommunitySponsors();
@@ -70,6 +78,18 @@ router.get('/getOlympians', async (req, res) => {
 });
 
 // v2
+
+router.get('/v2/getSponsors', async (req, res) => {
+    const results = await getCommunitySponsors();
+    const mortals = results.filter(
+        (entry) => entry.sum >= 100000 && entry.sum < 1000000
+    );
+    const gods = results.filter(
+        (entry) => entry.sum >= 1000000 && entry.sum < 100000000
+    );
+    const olympians = results.filter((entry) => entry.sum >= 100000000);
+    res.send({ mortals, gods, olympians });
+});
 
 router.get('/v2/getMortals', async (req, res) => {
     const results = await getCommunitySponsors();
