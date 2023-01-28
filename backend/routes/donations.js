@@ -47,7 +47,7 @@ router.route('/makeDonation').post(async (req, res) => {
             await knex('sponsors').insert({
                 // remove spaces and at-sign
                 handle: req.body.handle.trim().replace('@', ''),
-                handleType: req.body.handleType.trim(),
+                type: req.body.handleType.trim(),
                 invoice: response.data.id,
                 amount,
                 status: 'PENDING'
