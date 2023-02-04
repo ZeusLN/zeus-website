@@ -4,7 +4,7 @@ import express from 'express';
 import routes from './routes/';
 import bodyParser from 'body-parser';
 
-import createTable from './createTable';
+// import createTable from './createTable';
 import checkInvoices from './checkInvoices';
 
 import config from './config.json';

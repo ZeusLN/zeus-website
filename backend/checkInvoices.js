@@ -41,12 +41,15 @@ const checkInvoices = async () => {
     });
 
     const paidResults = await knex('sponsors')
-        .select('id', 'invoice', 'handle')
+        .select('id', 'invoice', 'handle', 'type')
         .where({ status: 'PAID' });
 
-    paidResults.forEach(async (donation, index) => {
-        console.log(donation.invoice);
-        await scrapeTwitterProfilePic(donation.handle, donation.id);
+    paidResults.forEach(async (donation) => {
+        console.log(donation);
+        if (donation.type === 'Twitter')
+            await scrapeTwitterProfilePic(donation.handle, donation.id);
+        if (donation.type === 'Nostr')
+            await scrapeNostrProfilePic(donation.handle, donation.id);
     });
 };
 
@@ -89,6 +92,40 @@ const scrapeTwitterProfilePic = async (handle, donationId) => {
     await page.goto('https://twitter.com/' + handle + '/photo');
     await page.waitForTimeout(1000);
     // Debug
+    // await page.screenshot({ path: 'example.png' });
+    await browser.close();
+};
+
+const scrapeNostrProfilePic = async (npub, donationId) => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.setUserAgent(
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:97.0) Gecko/20100101 Firefox/97.0'
+    );
+    await page.goto('https://iris.to/#/profile/' + npub);
+    await page.waitForTimeout(10000);
+    const imgs = await page.$$eval('.profile-picture', (imgs) =>
+        imgs.map((img) => img.getAttribute('src'))
+    );
+    const img = imgs[0];
+    if (img) {
+        console.log('img', img);
+        // const imgExt = img.split(/[#?]/)[0].split('.').pop().trim();
+        request.head(img, function (err, res, body) {
+            const npubPath = `public/nostr-images/`;
+            if (!fs.existsSync(npubPath)) {
+                fs.mkdirSync(npubPath);
+            }
+            const filePath = path.resolve(npubPath, `${npub}.jpg`);
+            request(img).pipe(fs.createWriteStream(filePath));
+        });
+
+        await knex('sponsors').update({ status: 'DISPLAY' }).where({
+            id: donationId
+        });
+    }
+    // debug
     // await page.screenshot({ path: 'example.png' });
     await browser.close();
 };

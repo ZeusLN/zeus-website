@@ -21,7 +21,7 @@ const twitterUsername = 'ZeusLN';
             if (url.match('(https://pbs.twimg.com/profile_images/(.*))')) {
                 console.log(url);
                 request.head(url, function (err, res, body) {
-                    const twitterUsernamePath = `twitter-images/`;
+                    const twitterUsernamePath = `public/twitter-images/`;
                     if (!fs.existsSync(twitterUsernamePath)) {
                         fs.mkdirSync(twitterUsernamePath);
                     }
