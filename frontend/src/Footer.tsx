@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import github from './images/github.svg';
 import telegram from './images/telegram.svg';
 import twitter from './images/twitter.svg';
+import nostr from './images/nostr.png';
 
 function Footer() {
     return (
@@ -59,6 +60,18 @@ function Footer() {
                                 height="55"
                                 className="d-inline-block align-top"
                                 alt="Twitter"
+                            />
+                        </a>
+                        <a
+                            href="https://iris.to/zeus@zeusln.app"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={nostr}
+                                height="55"
+                                className="d-inline-block align-top"
+                                alt="Nostr"
                             />
                         </a>
                     </div>
