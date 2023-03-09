@@ -23,7 +23,16 @@ function Header(props: any) {
     const classes = useStyles();
 
     return (
-        <Navbar bg="transparent" variant="dark" expand="lg">
+        <Navbar variant="dark" expand="lg" style={{
+            "position": "fixed",
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "zIndex": "1000",
+            "boxShadow": "0 3px 20px rgba(0, 0, 0, 0.1)",
+            "backgroundColor": "#242930",
+            "marginBottom": "16vh"
+        }}>
             <Container>
                 <Link to="/">
                     <Navbar.Brand>
