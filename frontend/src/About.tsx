@@ -47,6 +47,7 @@ import Talej from './images/contributors/Talej.jpg';
 import otech47 from './images/contributors/otech47.jpg';
 
 // design contributors
+import bosch from './images/maintainers/bosch.png';
 import bitcoin_design from './images/design/bitcoin_design.jpg';
 import stephenDeLorme from './images/design/stephenDeLorme.jpg';
 import xo__Tiana from './images/design/xo__Tiana.jpg';
@@ -55,7 +56,6 @@ import johnsBeharry from './images/design/johnsBeharry.jpg';
 
 // top maintainers
 import kaloudis from './images/maintainers/kaloudis.jpg';
-import bosch from './images/maintainers/bosch.png';
 
 import appleAppStore from './images/apple-app-store.png';
 import googlePlay from './images/google-play.png';
@@ -376,6 +376,15 @@ export default function About() {
             </div>
             <div className="avatar">
                 <a
+                    href={'https://github.com/Talej'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={Talej} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
                     href={'https://github.com/pseudozach'}
                     target="_blank"
                     rel="noreferrer"
@@ -399,15 +408,6 @@ export default function About() {
                     rel="noreferrer"
                 >
                     <Avatar src={gabidi} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
-            <div className="avatar">
-                <a
-                    href={'https://github.com/Talej'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={Talej} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
             <div className="avatar">
@@ -442,6 +442,15 @@ export default function About() {
 
     const designDisplay = (
         <div className="avatarDisplay">
+            <div className="avatar">
+                <a
+                    href={'https://github.com/Bosch-0'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={bosch} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
             <div className="avatar">
                 <a
                     href={'https://twitter.com/StephenDeLorme'}
@@ -508,15 +517,6 @@ export default function About() {
                     rel="noreferrer"
                 >
                     <Avatar src={kaloudis} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
-            <div className="avatar">
-                <a
-                    href={'https://github.com/Bosch-0'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={bosch} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
         </div>
