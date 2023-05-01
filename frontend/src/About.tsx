@@ -63,7 +63,7 @@ import androidDownload from './images/android-download.png';
 
 import config from './config.json';
 
-const androidUrl = `/zeus-${config.latestVersion}.apk`;
+const androidUrl = `/zeus-${config.latestVersion}-universal.apk`;
 
 interface donor {
     handle: string;

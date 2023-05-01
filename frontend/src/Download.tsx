@@ -13,7 +13,7 @@ import fdroid from './images/fdroid.png';
 
 import config from './config.json';
 
-const androidUrl = `/zeus-${config.latestVersion}.apk`;
+const androidUrl = `/zeus-${config.latestVersion}-universal.apk`;
 const manifestUrl = `/manifest-${config.latestVersion}.txt`;
 
 const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
