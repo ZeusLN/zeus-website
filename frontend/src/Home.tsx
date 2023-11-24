@@ -128,7 +128,7 @@ function Home() {
                                 <div className="left">
                                     <img
                                         src={app2}
-                                        width="450"
+                                        width="340"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #1"
                                     />
@@ -167,7 +167,7 @@ function Home() {
                                 <div className="left">
                                     <img
                                         src={app3}
-                                        width="450"
+                                        width="340"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #2"
                                     />
@@ -180,7 +180,7 @@ function Home() {
                                 <div className="left">
                                     <img
                                         src={app1}
-                                        width="450"
+                                        width="340"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #3"
                                     />
