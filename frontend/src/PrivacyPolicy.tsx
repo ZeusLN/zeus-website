@@ -11,9 +11,9 @@ function PrivacyPolicy() {
                 <h4>Privacy Policy</h4>
                 <div className="PrivacyPolicyText">
                     <p>
-                        This Zeus Privacy Notice describes the privacy practices
-                        that are applicable to your use of the Zeus mobile
-                        application (the "App") provided by Zeus LN LLC (the
+                        This ZEUS Privacy Notice describes the privacy practices
+                        that are applicable to your use of the ZEUS mobile
+                        application (the "App") provided by Atlas 21 Inc. (the
                         "Author").
                     </p>
 

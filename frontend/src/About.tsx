@@ -81,7 +81,7 @@ export default function About() {
     const useStyles = makeStyles((theme) => ({
         mainButton: {
             opacity: 1,
-            background: '#FFD93F',
+            background: '#FFA900',
             '&:hover': {
                 cursor: 'pointer',
                 backgroundColor: '#D6AB00'
@@ -537,7 +537,7 @@ export default function About() {
                             alt="Zeus"
                         />
                         <p className="Zeus-intro-text">
-                            Zeus is a Bitcoin Lightning wallet that gives users
+                            ZEUS is a Bitcoin Lightning wallet that gives users
                             complete control over how they make bitcoin
                             payments.
                         </p>
@@ -665,7 +665,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Community Integrations 🔌</h3>
                         <p className="About-text">
-                            You can connect Zeus to these platforms
+                            You can connect ZEUS to these platforms
                         </p>
                         <div className="sectionContent">
                             {integrationDisplay}
@@ -674,7 +674,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Integrated Services</h3>
                         <p className="About-text">
-                            You'll find these services integrated in Zeus
+                            You'll find these services integrated in ZEUS
                         </p>
                         <div className="sectionContent">{frensDisplay}</div>
                     </p>

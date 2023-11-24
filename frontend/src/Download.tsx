@@ -95,7 +95,7 @@ export default function Download() {
                                         margin: '15px 0 30px'
                                     }}
                                     className="d-inline-block align-top"
-                                    alt="Zeus F-Droid Repo QR"
+                                    alt="ZEUS F-Droid Repo QR"
                                 />
                             </a>
                         </section>

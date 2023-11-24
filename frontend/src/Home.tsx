@@ -12,9 +12,10 @@ import app1 from './images/app1.png';
 import app2 from './images/app2.png';
 import app3 from './images/app3.png';
 
-import zeusLogo from './images/Zeus.svg';
+import zeusLogo from './images/circle.png';
 
 import map from './images/map.png';
+import hyper from './images/hyper.jpg';
 
 import config from './config.json';
 
@@ -74,27 +75,46 @@ function Home() {
         <div className="App">
             <Header />
             <div className="Home">
-                <div className="Home-section1">
-                    <h2>
-                        <p className="highlighted-text">
-                            Bitcoin payments <span>your way</span>
-                        </p>
-                    </h2>
-                    <p className="App-subheader">
-                        Zeus is an open-source, non-custodial Bitcoin wallet
-                        that gives you full control over how you make payments.
-                    </p>
-                    <div className="appStores">
-                        <AppStores signatures />
-                    </div>
+                <Grid container spacing={1} columns={16}>
+                    <Grid item md={8}>
+                        <div>
+                            <div className="Home-s1">
+                                <h2>
+                                    <p className="highlighted-text">
+                                        Bitcoin payments <span>your way</span>
+                                    </p>
+                                </h2>
+                                <p className="App-subheader">
+                                    ZEUS is an open-source, self-custodial
+                                    Bitcoin wallet that gives you full control
+                                    over how you make payments.
+                                </p>
+                                <div className="appStores">
+                                    <AppStores signatures />
+                                </div>
+                            </div>
+                        </div>
+                    </Grid>
+                    <Grid item md={8}>
+                        <div className="hyper">
+                            <img
+                                src={hyper}
+                                width="100%"
+                                className="d-inline-block align-top"
+                                alt="Zeus connects remotely"
+                            />
+                        </div>
+                    </Grid>
+                </Grid>
 
+                <div className="Home-section1">
                     <div className="appScreenshots">
                         <Grid container spacing={1} columns={16}>
                             <Grid item md={6}>
                                 <div className="left">
                                     <img
                                         src={app2}
-                                        width="300"
+                                        width="450"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #1"
                                     />
@@ -108,7 +128,7 @@ function Home() {
                                         </p>
                                     </h3>
                                     <p>
-                                        Zeus offers the easiest way to instantly
+                                        ZEUS offers the easiest way to instantly
                                         send and receive bitcoin.
                                     </p>
                                 </div>
@@ -133,7 +153,7 @@ function Home() {
                                 <div className="left">
                                     <img
                                         src={app3}
-                                        width="300"
+                                        width="450"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #2"
                                     />
@@ -146,7 +166,7 @@ function Home() {
                                 <div className="left">
                                     <img
                                         src={app1}
-                                        width="300"
+                                        width="450"
                                         className="d-inline-block align-top"
                                         alt="Zeus screenshot #3"
                                     />
@@ -174,7 +194,7 @@ function Home() {
                         </p>
                     </h2>
                     <p className="App-subheader">
-                        Zeus connects to your Lightning node and lets you manage
+                        ZEUS connects to your Lightning node and lets you manage
                         it anywhere you go.
                     </p>
                 </div>
