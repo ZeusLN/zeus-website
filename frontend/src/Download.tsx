@@ -70,7 +70,9 @@ const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
                     <a href={androidUrlBeta}>APK</a> |{' '}
                     <a href={manifestUrlBeta}>Manifest</a> |{' '}
                     <a href="/PGP.txt">PGP key</a> |{' '}
-                    <a href="https://testflight.apple.com/join/vVnODWoi">iOS TestFlight</a>
+                    <a href="https://testflight.apple.com/join/vVnODWoi">
+                        iOS TestFlight
+                    </a>
                 </p>
             </>
         )}
