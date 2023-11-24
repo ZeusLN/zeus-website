@@ -13,8 +13,11 @@ import fdroid from './images/fdroid.png';
 
 import config from './config.json';
 
-const androidUrl = `/zeus-${config.latestVersion}.apk`;
+const androidUrl = `/zeus-${config.latestVersion}-universal.apk`;
 const manifestUrl = `/manifest-${config.latestVersion}.txt`;
+
+const androidUrlBeta = `/zeus-${config.latestBetaVersion}-universal.apk`;
+const manifestUrlBeta = `/manifest-${config.latestBetaVersion}.txt`;
 
 const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
     <>
@@ -57,7 +60,17 @@ const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
                 </p>
                 <p className="downloadDetails">
                     <a href={manifestUrl}>Manifest</a> |{' '}
+                    <a href={manifestUrlBeta}>Beta Manifest</a> |{' '}
                     <a href="/PGP.txt">PGP key</a>
+                </p>
+                <p className="downloadDetails">
+                    Latest beta: {config.latestBetaVersion}
+                </p>
+                <p className="downloadDetails">
+                    <a href={androidUrlBeta}>APK</a> |{' '}
+                    <a href={manifestUrlBeta}>Manifest</a> |{' '}
+                    <a href="/PGP.txt">PGP key</a> |{' '}
+                    <a href="https://testflight.apple.com/join/vVnODWoi">iOS TestFlight</a>
                 </p>
             </>
         )}
