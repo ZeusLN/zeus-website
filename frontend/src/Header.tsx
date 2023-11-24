@@ -44,7 +44,7 @@ function Header(props: any) {
                     {!props.hideNav && (
                         <Nav>
                             <Nav.Link
-                                href="https://store.zeusln.app"
+                                href="https://store.zeusln.com"
                                 target="_blank"
                             >
                                 Store
