@@ -50,6 +50,12 @@ function Header(props: any) {
                                 Store
                             </Nav.Link>
                             <Nav.Link
+                                href="https://blog.zeusln.com"
+                                target="_blank"
+                            >
+                                Blog
+                            </Nav.Link>
+                            <Nav.Link
                                 href="https://docs.zeusln.app"
                                 target="_blank"
                             >
