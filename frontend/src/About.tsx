@@ -589,7 +589,7 @@ export default function About() {
                                 />
                             </a>
                             <a
-                                href="https://iris.to/zeus@zeusln.app"
+                                href="https://primal.net/zeus"
                                 target="_blank"
                                 rel="noreferrer"
                             >
