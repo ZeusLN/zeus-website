@@ -30,6 +30,7 @@ import citadel from './images/integrations/citadel.webp';
 import lnbits from './images/integrations/lnbits.jpg';
 import nodl from './images/integrations/nodl.jpg';
 import start9 from './images/integrations/start9.png';
+import alby from './images/integrations/alby.png';
 
 // integrations
 import mempool from './images/frens/mempool.jpg';
@@ -324,6 +325,15 @@ export default function About() {
                     rel="noreferrer"
                 >
                     <Avatar src={start9} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://getalby.com/'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={alby} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
         </div>
