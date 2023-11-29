@@ -9,7 +9,7 @@ function Header(props: any) {
     const useStyles = makeStyles((theme) => ({
         downloadButton: {
             opacity: 1,
-            background: '#FFD93F',
+            background: '#FFA900',
             top: -5,
             paddingLeft: 15,
             paddingRight: 15,
@@ -31,7 +31,7 @@ function Header(props: any) {
                             src={logo}
                             height="75"
                             className="d-inline-block align-top"
-                            alt="Zeus"
+                            alt="ZEUS"
                             style={{ margin: 10 }}
                         />
                     </Navbar.Brand>
@@ -44,10 +44,16 @@ function Header(props: any) {
                     {!props.hideNav && (
                         <Nav>
                             <Nav.Link
-                                href="https://store.zeusln.app"
+                                href="https://store.zeusln.com"
                                 target="_blank"
                             >
                                 Store
+                            </Nav.Link>
+                            <Nav.Link
+                                href="https://blog.zeusln.com"
+                                target="_blank"
+                            >
+                                Blog
                             </Nav.Link>
                             <Nav.Link
                                 href="https://docs.zeusln.app"

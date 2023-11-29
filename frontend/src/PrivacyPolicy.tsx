@@ -11,19 +11,20 @@ function PrivacyPolicy() {
                 <h4>Privacy Policy</h4>
                 <div className="PrivacyPolicyText">
                     <p>
-                        This Zeus Privacy Notice describes the privacy practices
-                        that are applicable to your use of the Zeus mobile
-                        application (the "App") provided by Zeus LN LLC (the
+                        This ZEUS Privacy Notice describes the privacy practices
+                        that are applicable to your use of the ZEUS mobile
+                        application (the "App") provided by Atlas 21 Inc. (the
                         "Author").
                     </p>
 
                     <b>A. Privacy Practices</b>
                     <p>
-                        The Author intends for users to be able to use the
-                        functionality of the App on a decentralized, anonymous
-                        basis. The Author therefore does not collect, use,
-                        maintain or share any personal information about you
-                        when you use the App, and the Author does not use any
+                        With the exception of interactions with our remote 
+                        services, the Author intends for users to be able to use
+                        the functionality of the App on a decentralized,
+                        anonymous basis. The Author therefore does not collect,
+                        use, maintain or share any personal information about
+                        you when you use the App, and the Author does not use any
                         tracking technology to track your use of the App. The
                         Author also does not allow third parties to collect
                         personal information about you when you use the App, or
@@ -31,7 +32,11 @@ function PrivacyPolicy() {
                         Any information that you provide to us when you
                         communicate with our customer or technical support
                         departments will only be used for purposes of addressing
-                        your specific support request.
+                        your specific support request. 
+                    </p>
+                    <p>
+                        IP addresses may be collected when accessing our
+                        remote services to help mitigate abuse.
                     </p>
 
                     <b>B. Third Party App Stores</b>

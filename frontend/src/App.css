@@ -2,16 +2,15 @@ html,body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #242930;
+  background-color: #000;
 }
 
 .App {
   text-align: center;
   color: #fff;
-  background-color: #242930;
-  background-image: url('images/keysign.png');
-  background-color: #242930;
-  background-size: 42%;
+  background-color: '#000';
+  background-image: url('images/pattern.png');
+  background-color: #000;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -21,7 +20,7 @@ html,body {
 
 .App-basic {
   text-align: center;
-  background-color: #242930;
+  background-color: '#000';
   color: #fff;
   width: 100%;
 }
@@ -36,7 +35,7 @@ p.highlighted-amount {
 
 p.highlighted-amount span {
   white-space: nowrap;
-  color: #FFD93F;
+  color: #FFA900;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 59%;
@@ -50,7 +49,7 @@ p.highlighted-text {
 }
 
 p.highlighted-text span {
-  color: #FFD93F;
+  color: #FFA900;
   display: inline-block;
 
   /* background: url("localhost:3000/static/media/lightning-animation.4b145581.gif") repeat center;
@@ -71,7 +70,7 @@ p.highlighted-text span {
 
 @keyframes pulse-highlight {
   0% {
-    transform: scale(0.95);
+    transform: scale(0.90);
     color: 0 0 0 0 rgba(255, 217, 63, 0.7);
     opacity: 0.7;
   }
@@ -83,13 +82,38 @@ p.highlighted-text span {
   }
 }
 
-.Home-section1 {
+.Home-s{
+  display: flex;
+  flex-direction: row;
+}
+
+.Home-s1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.Home-s2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  min-width: 50%;
+}
+
+
+.Home-section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  background-color: #000;
 }
 
 .Home-section2 {
@@ -101,7 +125,7 @@ p.highlighted-text span {
 }
 
 .Home-section3 {
-  background-color: #242930;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,8 +152,8 @@ p.highlighted-text span {
 }
 
 .App-footer {
-  background-image: url('images/keysign.png');
-  background-color: #242930;
+  background-image: url('images/pattern.png');
+  background-color: #000;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -274,7 +298,7 @@ code::before {
 }
 
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
-  background-color: #242930 !important;
+  background-color: #000 !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -288,7 +312,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 
 a {
 	text-decoration: none;
-  color: #FFD93F;
+  color: #FFA900;
 }
 
 .createdBy {
@@ -337,6 +361,10 @@ a {
     margin-top: 120px;
 }
 
+.hyper {
+  margin-top: -120px;
+}
+
 .Zeus-intro {
     margin-top: 100px;
     align-items: center;
@@ -374,7 +402,7 @@ a {
 }
 
 .Donate {
-    background-color: #242930;
+    background-color: #000;
 }
 
 .Donation-types {

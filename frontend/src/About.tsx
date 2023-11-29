@@ -30,6 +30,7 @@ import citadel from './images/integrations/citadel.webp';
 import lnbits from './images/integrations/lnbits.jpg';
 import nodl from './images/integrations/nodl.jpg';
 import start9 from './images/integrations/start9.png';
+import alby from './images/integrations/alby.png';
 
 // integrations
 import mempool from './images/frens/mempool.jpg';
@@ -37,6 +38,7 @@ import mempool from './images/frens/mempool.jpg';
 
 // top contributors
 import shubhamkmr04 from './images/contributors/shubhamkmr04.jpg';
+import myxmaster from './images/contributors/myxmaster.jpg';
 import gabidi from './images/contributors/gabidi.png';
 import futurepaul from './images/contributors/futurepaul.jpg';
 import fiatjaf from './images/contributors/fiatjaf.jpg';
@@ -47,6 +49,7 @@ import Talej from './images/contributors/Talej.jpg';
 import otech47 from './images/contributors/otech47.jpg';
 
 // design contributors
+import bosch from './images/maintainers/bosch.png';
 import bitcoin_design from './images/design/bitcoin_design.jpg';
 import stephenDeLorme from './images/design/stephenDeLorme.jpg';
 import xo__Tiana from './images/design/xo__Tiana.jpg';
@@ -55,7 +58,6 @@ import johnsBeharry from './images/design/johnsBeharry.jpg';
 
 // top maintainers
 import kaloudis from './images/maintainers/kaloudis.jpg';
-import bosch from './images/maintainers/bosch.png';
 
 import appleAppStore from './images/apple-app-store.png';
 import googlePlay from './images/google-play.png';
@@ -81,7 +83,7 @@ export default function About() {
     const useStyles = makeStyles((theme) => ({
         mainButton: {
             opacity: 1,
-            background: '#FFD93F',
+            background: '#FFA900',
             '&:hover': {
                 cursor: 'pointer',
                 backgroundColor: '#D6AB00'
@@ -325,6 +327,15 @@ export default function About() {
                     <Avatar src={start9} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
+            <div className="avatar">
+                <a
+                    href={'https://getalby.com/'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={alby} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
         </div>
     );
 
@@ -355,15 +366,6 @@ export default function About() {
         <div className="avatarDisplay">
             <div className="avatar">
                 <a
-                    href={'https://github.com/deregs'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={deregs} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
-            <div className="avatar">
-                <a
                     href={'https://github.com/shubhamkmr04'}
                     target="_blank"
                     rel="noreferrer"
@@ -372,6 +374,24 @@ export default function About() {
                         src={shubhamkmr04}
                         sx={{ width: 100, height: 100 }}
                     />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://github.com/myxmaster'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={myxmaster} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
+                    href={'https://github.com/deregs'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={deregs} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
             <div className="avatar">
@@ -444,6 +464,15 @@ export default function About() {
         <div className="avatarDisplay">
             <div className="avatar">
                 <a
+                    href={'https://github.com/Bosch-0'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Avatar src={bosch} sx={{ width: 100, height: 100 }} />
+                </a>
+            </div>
+            <div className="avatar">
+                <a
                     href={'https://twitter.com/StephenDeLorme'}
                     target="_blank"
                     rel="noreferrer"
@@ -510,15 +539,6 @@ export default function About() {
                     <Avatar src={kaloudis} sx={{ width: 100, height: 100 }} />
                 </a>
             </div>
-            <div className="avatar">
-                <a
-                    href={'https://github.com/Bosch-0'}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Avatar src={bosch} sx={{ width: 100, height: 100 }} />
-                </a>
-            </div>
         </div>
     );
 
@@ -537,7 +557,7 @@ export default function About() {
                             alt="Zeus"
                         />
                         <p className="Zeus-intro-text">
-                            Zeus is a Bitcoin Lightning wallet that gives users
+                            ZEUS is a Bitcoin Lightning wallet that gives users
                             complete control over how they make bitcoin
                             payments.
                         </p>
@@ -579,7 +599,7 @@ export default function About() {
                                 />
                             </a>
                             <a
-                                href="https://iris.to/zeus@zeusln.app"
+                                href="https://primal.net/zeus"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -665,7 +685,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Community Integrations 🔌</h3>
                         <p className="About-text">
-                            You can connect Zeus to these platforms
+                            You can connect ZEUS to these platforms
                         </p>
                         <div className="sectionContent">
                             {integrationDisplay}
@@ -674,7 +694,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Integrated Services</h3>
                         <p className="About-text">
-                            You'll find these services integrated in Zeus
+                            You'll find these services integrated in ZEUS
                         </p>
                         <div className="sectionContent">{frensDisplay}</div>
                     </p>
@@ -722,7 +742,7 @@ export default function About() {
                     <p className="About-section">
                         <h3>Maintainers</h3>
                         <p className="About-text">
-                            Zeus is an open-source, self-custody, Bitcoin
+                            ZEUS is an open-source, self-custody, Bitcoin
                             wallet. Don’t trust us? You don’t have to.
                         </p>
                         <Button

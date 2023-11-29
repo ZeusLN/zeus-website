@@ -21,7 +21,7 @@ export default function Sponsor() {
             height: 60,
             borderRadius: 20,
             margin: 10,
-            background: '#FFD93F',
+            background: '#FFA900',
             '&:hover': {
                 cursor: 'pointer',
                 backgroundColor: '#D6AB00'
@@ -124,7 +124,7 @@ export default function Sponsor() {
             <Header hideNav />
             <div className="About">
                 <header className="App-header">
-                    <h5>Sponsor Zeus</h5>
+                    <h5>Sponsor ZEUS</h5>
                     <div className="Donate">
                         <div className="Donation-types">
                             <button
@@ -143,7 +143,7 @@ export default function Sponsor() {
                                 {false && (
                                     <p className="Donation-description">
                                         Donate and supoprt further development
-                                        of Zeus
+                                        of ZEUS
                                     </p>
                                 )}
                                 <p className="highlighted-amount">
@@ -223,7 +223,7 @@ export default function Sponsor() {
                                     <input
                                         style={{
                                             backgroundColor: '#616468',
-                                            color: '#FFD93F',
+                                            color: '#FFA900',
                                             borderWidth: 0,
                                             width: 220,
                                             borderRadius: 13,

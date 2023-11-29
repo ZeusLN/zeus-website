@@ -20,7 +20,7 @@ function Footer() {
                                 width="300"
                                 height="55"
                                 className="d-inline-block align-top"
-                                alt="Zeus"
+                                alt="ZEUS"
                                 style={{ marginBottom: 30 }}
                             />
                         </Navbar.Brand>
@@ -63,7 +63,7 @@ function Footer() {
                             />
                         </a>
                         <a
-                            href="https://iris.to/zeus@zeusln.app"
+                            href="https://primal.net/zeus"
                             target="_blank"
                             rel="noreferrer"
                         >
