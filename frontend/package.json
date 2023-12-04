@@ -92,6 +92,7 @@
         "typescript": "4.5.2",
         "url-loader": "4.1.1",
         "web-vitals": "1.1.2",
+        "webfontloader": "1.6.28",
         "webpack": "5.75.0",
         "webpack-dev-server": "4.11.1",
         "webpack-manifest-plugin": "4.0.2",
@@ -99,6 +100,7 @@
     },
     "devDependencies": {
         "@types/styled-components": "5.1.22",
+        "@types/webfontloader": "1.6.38",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-prettier": "4.0.0",
         "prettier": "2.4.1"

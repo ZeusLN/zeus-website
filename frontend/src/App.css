@@ -1,8 +1,27 @@
+@font-face {
+    font-family: 'Marlide Display Bold';
+    src: url('./fonts/Marlide-Display-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('./fonts/ppneuemontreal-book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,body {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #000;
+}
+
+body {
+  font-family: 'PP Neue Montreal';
+  font-weight: 400;
 }
 
 .App {
@@ -45,10 +64,16 @@ p.highlighted-amount span {
   font-weight: bold;
 }
 
+h3{
+  font-family: 'Marlide Display Bold';
+}
+
 p.highlighted-text {
+  font-family: 'Marlide Display Bold';
 }
 
 p.highlighted-text span {
+  font-family: 'Marlide Display Bold';
   color: #FFA900;
   display: inline-block;
 
