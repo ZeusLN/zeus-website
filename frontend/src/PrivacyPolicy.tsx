@@ -19,24 +19,24 @@ function PrivacyPolicy() {
 
                     <b>A. Privacy Practices</b>
                     <p>
-                        With the exception of interactions with our remote 
+                        With the exception of interactions with our remote
                         services, the Author intends for users to be able to use
                         the functionality of the App on a decentralized,
                         anonymous basis. The Author therefore does not collect,
                         use, maintain or share any personal information about
-                        you when you use the App, and the Author does not use any
-                        tracking technology to track your use of the App. The
-                        Author also does not allow third parties to collect
+                        you when you use the App, and the Author does not use
+                        any tracking technology to track your use of the App.
+                        The Author also does not allow third parties to collect
                         personal information about you when you use the App, or
                         to use tracking technology to track your use of the App.
                         Any information that you provide to us when you
                         communicate with our customer or technical support
                         departments will only be used for purposes of addressing
-                        your specific support request. 
+                        your specific support request.
                     </p>
                     <p>
-                        IP addresses may be collected when accessing our
-                        remote services to help mitigate abuse.
+                        IP addresses may be collected when accessing our remote
+                        services to help mitigate abuse.
                     </p>
 
                     <b>B. Third Party App Stores</b>

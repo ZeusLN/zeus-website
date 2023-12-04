@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
+import WebFont from 'webfontloader';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -84,7 +85,18 @@ const AppStores = ({ signatures = false }: { signatures?: boolean }) => (
     </>
 );
 
+const loadFonts = () => {
+    WebFont.load({
+        google: {
+            families: ['Marlide Display:700', 'PP Neue Montreal:400,700']
+        }
+    });
+};
+
 function Home() {
+    useEffect(() => {
+        loadFonts();
+    }, []);
     return (
         <div className="App">
             <Header />
