@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
+        "build-patch": "sed -i -e 's@file:///@https://zeusln.com/@g' build/static/css/main.*.css",
         "test": "node scripts/test.js",
         "prettier": "prettier --check '**/*.ts*'",
         "prettier-write": "prettier --check --write '**/*.ts*'"
