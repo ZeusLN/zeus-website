@@ -131,7 +131,7 @@ export default function About() {
                     <a
                         href={
                             donor.type === 'Nostr'
-                                ? `https://iris.to/#/profile/${donor.handle}`
+                                ? `https://iris.to/${donor.handle}`
                                 : `https://twitter.com/${donor.handle}`
                         }
                         target="_blank"
@@ -164,7 +164,7 @@ export default function About() {
                     <a
                         href={
                             donor.type === 'Nostr'
-                                ? `https://iris.to/#/profile/${donor.handle}`
+                                ? `https://iris.to/${donor.handle}`
                                 : `https://twitter.com/${donor.handle}`
                         }
                         target="_blank"
@@ -197,7 +197,7 @@ export default function About() {
                     <a
                         href={
                             donor.type === 'Nostr'
-                                ? `https://iris.to/#/profile/${donor.handle}`
+                                ? `https://iris.to/${donor.handle}`
                                 : `https://twitter.com/${donor.handle}`
                         }
                         target="_blank"
