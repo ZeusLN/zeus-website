@@ -20,7 +20,7 @@ router.route('/makeDonation').post(async (req, res) => {
             error: 'Whole sats only. Sorry.'
         });
     }
-    if (Number(amount) < 10000) {
+    if (false && Number(amount) < 10000) {
         res.json({
             success: false,
             error: 'Amount too small for tracking. Please make anonymous donation at https://pay.zeusln.app'
