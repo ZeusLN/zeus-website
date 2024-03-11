@@ -54,7 +54,7 @@ export default function Sponsor() {
             setDonationError('Whole sats only. Sorry.');
             return;
         }
-        if (Number(amount) < 10000) {
+        if (false && Number(amount) < 10000) {
             setDonationError(
                 'Amount too small to be tracked. Please consider making an anonymous donation.'
             );
