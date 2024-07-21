@@ -79,14 +79,14 @@ function Footer() {
                     </div>
                 </Container>
             </Navbar>
-            <div className='canary'>
+            <div className="canary">
                 <img
-                                src={canary}
-                                height="40"
-                                className="d-inline-block align-top"
-                                alt="Warrant canary"
-                            />
-                            </div>
+                    src={canary}
+                    height="40"
+                    className="d-inline-block align-top"
+                    alt="Warrant canary"
+                />
+            </div>
         </div>
     );
 }
