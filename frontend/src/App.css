@@ -499,3 +499,7 @@ p.amount {
 .PrivacyPolicyText {
     margin-top: 40px;
 }
+
+.canary {
+    margin: 20px;
+}

@@ -8,6 +8,8 @@ import telegram from './images/telegram.svg';
 import twitter from './images/twitter.svg';
 import nostr from './images/nostr.png';
 
+import canary from './images/canary.png';
+
 function Footer() {
     return (
         <div className="App-footer">
@@ -77,6 +79,14 @@ function Footer() {
                     </div>
                 </Container>
             </Navbar>
+            <div className='canary'>
+                <img
+                                src={canary}
+                                height="40"
+                                className="d-inline-block align-top"
+                                alt="Warrant canary"
+                            />
+                            </div>
         </div>
     );
 }
