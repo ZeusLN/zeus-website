@@ -61,6 +61,12 @@ function Header(props: any) {
                             >
                                 Documentation
                             </Nav.Link>
+                            <Nav.Link
+                                href="https://olympusln.com"
+                                target="_blank"
+                            >
+                                LSP
+                            </Nav.Link>
                             <Link to="/about">
                                 <Nav.Link href="#about">About</Nav.Link>
                             </Link>
